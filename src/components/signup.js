@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../App.css';
-import {Carousel,Nav, Navbar, Figure, Container,Button, Card,CardColumns} from 'react-bootstrap';
-import   {Window,Alarm, Award, BarChart, EnvelopeFill,GearWide,Image
+import {Carousel,Nav, Navbar, Figure, Container,Button, Card,CardColumns, Jumbotron, Image} from 'react-bootstrap';
+import   {Window,Alarm, Award, BarChart, EnvelopeFill,GearWide
 } from 'react-bootstrap-icons';
 
 import carousel from "./images/carousel.jpg";
@@ -15,6 +15,10 @@ import logoclient5 from "./images/amazon.png";
 import logoclient6 from "./images/laliga.png";
 import icon1 from "./images/settings.png";
 import icon2 from "./images/settings.png";
+import screen from './images/Screen.png';
+import shot from './images/Shot1.png';
+import shot1 from './images/Shot2.png';
+import free from './images/Free.png';
 
 import axios from "axios";
 
@@ -221,7 +225,7 @@ return(
   </Figure>
   
   <Figure className="resize">
-  <Image className="size"/>Image
+<Window className="size"/>Image
   <Figure.Caption >
   There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.  </Figure.Caption>
   </Figure>
@@ -328,6 +332,111 @@ return(
     </Card.Body>
   </Card>
 </CardColumns>
+
+
+<Jumbotron>
+  <Container>
+    <h1 className="hfluid">Get work done in over 1350 different categories</h1>
+    <Image src={screen} fluid className="center"/>
+  </Container>
+</Jumbotron>
+
+<Jumbotron>
+  <Container>
+<Card className="card1">
+<Card.Img src={shot}/>
+<Card.ImgOverlay>
+<Card.Link href="#" className="link1">FREELANCER API</Card.Link>
+  <Card.Body>
+    <Card.Title> <b> 42 million professionals <br/> on demand </b> </Card.Title>
+    <Card.Text>
+    Why hire people when you can <br/> simply integrate our talented <br/> cloud workforce instead?
+    </Card.Text>
+    <Button variant="primary">View Documentation</Button>
+    
+  </Card.Body>
+</Card.ImgOverlay>
+</Card>
+
+<Card className="card2">
+<Card.Img src={shot1}/>
+<Card.ImgOverlay>
+<Card.Link href="#" className="link2">FREELANCER ENTERPRISE</Card.Link>
+  <Card.Body>
+    <Card.Title><b>Company budget? Get <br/> more done for less </b></Card.Title>
+    <Card.Text>
+    Use our workforce of 42 million to <br/> help your business achieve more.
+    </Card.Text>
+    <Button variant="primary">Contact Us</Button>
+  </Card.Body>
+</Card.ImgOverlay>
+
+</Card>
+</Container>
+</Jumbotron>
+
+
+<div className="mt-5 pt-5 pb-5 footer">
+<div className="container">
+  <div className="row">
+    <div className="col-md-3 col-xs-12 about-company">
+      <img src={free}/> <br/>
+      <span> <i className="fa fa-globe mr-3"></i> English - US (International)</span> <br/> <br/>
+      <span> <i className="fa fa-question-circle mr-3"></i> Help and Support </span>
+      
+
+    
+    </div>
+    <div className="col-md-2 col-xs-12 links1">
+      <h4 className="mt-md-0 mt-sm-3">Freelancer</h4>
+        <ul className="m-0 p-0">
+          <li>Categories</li>
+          <li>Projects</li>
+          <li>Contests</li>
+          <li>Freelancers</li>
+          <li>Enterprise</li>
+          <li>Preferred Freelancer Program</li>
+          <li>Project Management</li>
+          <li>Local Jobs</li>
+          <li>Showcase</li>
+          <li>API for Developers</li>
+        </ul>
+    </div>
+    <div className="col-md-2 col-xs-12 links2">
+      <h4 className="mt-lg-0 mt-sm-3">About</h4>
+        <ul className="m-0 p-0">
+          <li>About us</li>
+          <li>How it Works</li>
+          <li>Security</li>
+          <li>Investor</li>
+          <li>Sitemap</li>
+          <li>Quotes</li>
+          <li>News</li>
+        </ul>
+    </div>
+    <div className="col-md-2 col-xs-12 links3">
+      <h4 className="mt-lg-0 mt-sm-3">Terms</h4>
+        <ul className="m-0 p-0">
+          <li>Privacy Policy</li>
+          <li>Terms and Conditions</li>
+          <li>Copyright Policy</li>
+          <li>Code of Conduct</li>
+          <li>Fees and Charges</li>
+        </ul>
+    </div>
+    <div className="col-md-2 col-xs-12 location">
+      <h4 className="mt-lg-0 mt-sm-4 hh">Apps</h4>
+      <img src="https://www.freepnglogos.com/uploads/app-store-logo-png/apple-app-store-travel-awards-globestamp-7.png" width="200" alt="apple app store travel awards globestamp" />
+      
+    </div>
+  </div>
+  <div className="row mt-5">
+    <div clasNames="col copyright">
+      <p className=""><small className="text-white-50">© 2019. All Rights Reserved.</small></p>
+    </div>
+  </div>
+</div>
+</div>
 
 
 </div>
