@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+
+   
+.navbar .navbar-brand{
+
+color: black !important;
+text-transform: none !important;
+margin-left: 100px !important;
+}
+ 
+.carousel-inner .carousel-item img, .carousel-inner.carousel-item a img{
+
+
+    border-radius: 0 !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.heading{
+
+margin-top: 70px;
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+.size{
+    height: 20% !important;
+    width: 20% !important;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.resize{
+
+
+    max-width: 23% !important;
+    font-weight: bold !important;
+font-size: 14px;
+margin-left: 5%;
 }
 
-.App-link {
-  color: #61dafb;
+.roundimages{
+
+
+    font-weight: bold ;
+    font-size: 10px;
+    margin-left: 10%;
+
+}
+.card {
+
+
+max-width: 60%;
+width: 80% !important;
+margin-left: 20%;
+
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.color{
+
+    background-color: #F7F7F7;
+}
+
+.card-columns{
+
+    grid-column-gap: 0 !important;
+
 }
