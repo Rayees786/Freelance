@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row,Col, Button ,Input} from 'react-bootstrap';
-import Signup from './signup';
+import { Container, Row,Col, Button ,Input, Image, Nav, Jumbotron, Card, CardDeck, Figure} from 'react-bootstrap';
+import Home from './Home';
 import Howitworks from './Howitworks';
 
 import sshot3 from './images/sshot3.jpg';
 import sshot4 from './images/sshot4.jpg';
+import about1 from './images/About1.png';
+import about2 from './images/About2.png';
+import about3 from './images/About3.png';
+import about4 from './images/About4.png';
+import about5 from './images/About5.png';
+import about6 from './images/About6.png';
+import about7 from './images/About7.png';
+import about8 from './images/About8.png';
+import about9 from './images/About9.png';
+import about11 from './images/About11.png';
+import about12 from './images/About12.png';
+import about13 from './images/About13.png';
 
 import   {Map, InfoSquare, KanbanFill
 } from 'react-bootstrap-icons';
@@ -145,6 +157,138 @@ Go through the Verification Center checklist</p>
     </Col>
 
   </Row>
+</Container>
+
+   <Container className="container1">
+  <Row>
+    <Col sm={6}>
+    <h2> Manage Your Career. </h2> <br/>
+
+    <p> Stay up to date on the Freelancer.com marketplace and keep in touch with your clients.</p> 
+
+<p> Collaborate with your clients on the go and get alerted on the latest jobs with our mobile app and desktop platform. </p> 
+
+<p> Our job alerts system will keep you updated once new projects that fit your skills and expertise become available. Bid away! </p>
+
+    </Col>
+    <Col sm={6}>
+    <Image src={about1} fluid/>
+    </Col>
+  </Row>
+  </Container>
+
+     <Container className="container1">
+  <Row>
+   
+    <Col sm={6}>
+    <Image src={about2} fluid/>
+    </Col>
+    <Col sm={6}>
+     <h2> Safe and Secure. </h2> <br/>
+
+    <p>Freelancer.com is a community that values your trust and safety as our number one priority:</p> 
+
+<ul><li> State-of-the-art security for your funds. All transactions are secured with DigiCert 4096-bit SSL encryption.</li>
+<li>Request for Milestone Payments from your clients to make sure that your hard earned money gets to you safely.</li>
+<li>Our representatives are available 24/7 to assist you with any issues. </li> </ul>     
+
+   </Col>
+  </Row>
+  </Container>
+
+
+
+<Jumbotron fluid className="jumbotron big-banner banner2">
+    <Container fluid className="trail">   
+     
+   
+    <Row> <Col> <h2> So what are you waiting for? </h2> </Col> </Row>
+    <br/>
+   <Row> <Col> Search for the right job and write your best bid proposal now. </Col> </Row>
+    <br/>
+     <Button variant="outline-light" size="lg"> Browse Jobs </Button>     
+</Container>
+</Jumbotron>
+<section>
+
+<Container fluid className="ccontainer">  
+   <Row> <Col> <h2> Testimonials from other Freelancers </h2> </Col> </Row> 
+    <br/>
+   <Row>  <span> Still not convinced? Hear it from these people whose lives have changed through working on Freelancer.com. These are some of our </span> </Row>
+   <Row> <Col> proud freelancers who've built themselves up through Freelancer.com. </Col> </Row>
+</Container>
+
+<Container fluid className="hcontainer"> 
+<Row>
+    <Col sm={4}>
+    <Figure>
+  <Figure.Image rounded
+    width={366}
+    height={261}
+    src={about11}
+  />
+  <Figure.Caption>
+  <i> <span> "I honestly do not know where I would be if I hadn't discovered Freelancer when I did. It has formed the backbone of support for me over recent years." </span>  </i>
+ <hr className="hrsmall"></hr>
+ <b> Elizabeth March </b>
+ <p> Copywriter </p>
+  </Figure.Caption>
+</Figure>
+    </Col>
+    <Col sm={4}>
+    <Figure>
+  <Figure.Image
+  rounded
+    width={366}
+    height={261}
+    src={about12}
+  />
+  <Figure.Caption>
+  <i> <span> "The best thing Freelancer.com offers is the independence to work. I can work in any place around the world, even on a boat in the middle of the sea." </span>  </i>
+ <hr className="hrsmall"></hr>
+ <b> Federico Gonzales </b>
+ <p> Industrial Designer </p>
+  </Figure.Caption>
+</Figure>
+    </Col>
+    <Col sm={4}>
+    <Figure>
+  <Figure.Image
+  rounded
+    width={366}
+    height={261}
+    src={about13}
+  />
+  <Figure.Caption>
+  <i> <span> "The money on Freelancer is great. I think as Freelancer gets bigger and more people begin to understand the power of crowdsourcing it will only get stronger. I see this as the way of the future for work and I am so excited to be in on it at the ground level -- it will only get better." </span> </i>
+ <hr className="hrsmall"></hr>
+ <b> Jessie Weatherley </b>
+ <p> Marketing Expert </p>
+  </Figure.Caption>
+</Figure>
+    </Col>
+
+</Row>
+
+</Container>
+
+
+  <br/>
+  <br/>
+
+<hr/>
+
+
+</section>
+<Container fluid className="bcontainer">  
+   <Row> <Col> <h2> Additional Help </h2> </Col> </Row>
+    <br/>
+   <Row> <Col>  Not sure where to start? Check out the links below: </Col> </Row>
+    <br/>
+   <Row> <Col sm={6} > <Nav.Link href="#"> How to Get Started at Freelancer.com </Nav.Link> </Col>  <Col sm={6}> <Nav.Link href="#"> Successful freelancing on Freelancer.com </Nav.Link> </Col> </Row>
+  
+  <Row> <Col sm={6}>  <Nav.Link href="#"> Tips for new freelancers </Nav.Link> </Col> <Col sm={6}> <Nav.Link href="#"> Tips for winning projects </Nav.Link> </Col> </Row> 
+    
 </Container>
 </div>
     );

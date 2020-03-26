@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../App.css';
 import Howitworks from './Howitworks';
-import {Carousel,Nav, Navbar, Figure, Container,Button, Card,CardColumns, Jumbotron, Image} from 'react-bootstrap';
+import {Carousel,Nav, Navbar, Figure, Container,Button, Card,CardColumns, Jumbotron, Image, Row, Col} from 'react-bootstrap';
 import   {Window,Alarm, Award, BarChart, EnvelopeFill,GearWide
 } from 'react-bootstrap-icons';
 import {
@@ -28,6 +28,7 @@ import shot from './images/Shot1.png';
 import shot1 from './images/Shot2.png';
 import free from './images/Free.png';
 
+
 import axios from "axios";
 
 import "./project/src/assets/css/bootstrap.min.css";
@@ -36,7 +37,7 @@ import "./project/src/assets/css/paper-kit.min.css";
 import "./project/src/assets/css/paper-kit.css.map";
 import "./project/src/assets/demo/demo.css";
 
-function Signup() {
+function Home() {
 
 return(
   <div className="width">
@@ -328,34 +329,50 @@ return(
 </CardColumns>
 
 
-<Jumbotron>
-  <Container>
-    <h1 className="hfluid">Get work done in over 1350 different categories</h1>
-    <Image src={screen} fluid className="center"/>
-  </Container>
-</Jumbotron>
+<Container fluid className="jumbo">
+<Row>
+<Col>
+<Image fluid src={screen}/>
 
-<Jumbotron>
+</Col>
+
+</Row>
+
+</Container>
+
+
+
+
   <Container>
+  <Row>
+  <Col sm={6}>
 <Card className="card1">
 <Card.Img src={shot}/>
 <Card.ImgOverlay>
-<Card.Link href="#" className="link1">FREELANCER API</Card.Link>
+
+<Card.Link href="#">FREELANCER API</Card.Link>
+<br/>
+<br/>
   <Card.Body>
-    <Card.Title> <b> 42 million professionals <br/> on demand </b> </Card.Title>
+    <Card.Title> <b>42 million professionals <br/> on demand </b></Card.Title>
     <Card.Text>
     Why hire people when you can <br/> simply integrate our talented <br/> cloud workforce instead?
     </Card.Text>
     <Button variant="primary">View Documentation</Button>
-    
   </Card.Body>
-</Card.ImgOverlay>
-</Card>
+  </Card.ImgOverlay>
 
+
+
+</Card>
+</Col>
+<Col sm={6}>
 <Card className="card2">
 <Card.Img src={shot1}/>
 <Card.ImgOverlay>
-<Card.Link href="#" className="link2">FREELANCER ENTERPRISE</Card.Link>
+<Card.Link href="#">FREELANCER ENTERPRISE</Card.Link>
+<br/>
+<br/>
   <Card.Body>
     <Card.Title><b>Company budget? Get <br/> more done for less </b></Card.Title>
     <Card.Text>
@@ -366,8 +383,10 @@ return(
 </Card.ImgOverlay>
 
 </Card>
+</Col>
+</Row>
 </Container>
-</Jumbotron>
+
 
 
 
@@ -376,7 +395,7 @@ return(
 );
 
 }
-export default Signup;
+export default Home;
 
 
 

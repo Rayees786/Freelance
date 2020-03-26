@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import '../App.css';
-import Signup from './signup';
+import Home from './Home';
 import Howitworks from './Howitworks';
 import Work from './Work';
 
@@ -34,7 +34,7 @@ class App extends React.Component {
 <Router>
 
             <Navbar bg="light" variant="dark">
-              <Navbar.Brand >
+              <Navbar.Brand  href="./">
                 <img
                   alt=""
                   src={logo}
@@ -43,7 +43,7 @@ class App extends React.Component {
                   className="d-inline-block align-top"
                 />
               
-              <NavLink className="links" to="/home" exact>
+              <NavLink className="links" to="/hire" exact>
 
                 How it Works</NavLink>
                 <NavLink className="links" to="/login" exact>
@@ -64,9 +64,9 @@ Sign up</NavLink>
             <Switch>
 
             <Route path="/" exact>
-            <Signup></Signup>
+            <Home></Home>
           </Route>
-          <Route path="/home" exact>
+          <Route path="/hire" exact>
             <Howitworks></Howitworks>
           </Route>
           <Route path="/work" exact>

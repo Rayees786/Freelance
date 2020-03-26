@@ -156,6 +156,8 @@ margin-left: 20%;
     color:#fff;
     font-family: "Helvetica Neue";
     font:"roboto";
+    max-width:100%;
+  font-size: 14px;
   }
     
     .links{
@@ -204,40 +206,126 @@ margin-left: 20%;
     max-width: 150%;
     margin:auto;
   }
-  
-  .card1{
-    display: inline-block;
-    margin-right:auto;
-    margin-left: auto;
-    float:left;
-    max-width: 48% !important;
-  
-    
-    text-align: right;
-  }
-  
-  .card2{
-    display: inline-block;
-    margin-left:auto;
-    margin-right:auto;
-    max-width: 48% !important;
-  
-    width: 10%;
-    
-  }
 
+
+.card1{
+  display: inline-block !important;
+  margin-right:20px !important;
+  margin-left: auto !important;
+  width: 100% !important;
+  text-align: right !important;
+  margin-bottom:20px !important;
   
-  .hh{
-    margin-left:13px;
-  }
-  
-  .link1{
-    margin-right:20px;
-  }
-  
-  .link2{
-    margin-left:20px;
-  }
+}
+
+.card2{
+  display: inline-block !important;
+  margin-left:50px !important;
+  margin-right:auto !important;
+  width: 100% !important;  
+}
+
+.hh{
+  margin-left:13px;
+}
+
+.card-deck{
+  margin:0 auto !important;
+  max-width:83%;
+  margin-bottom: 30px !important;
+ 
+}
+
+.card-body{
+  padding:0px;
+}
+
+.wrapper {
+    text-align: center;
+    margin-bottom:20px;
+    margin-top:60px;
+}
+
+.cbutton{
+  position: relative; 
+  background: #F0F0F0!important;
+  color:#4D525B !important;
+  border-color: 1px solid #BEC0C2 !important;
+  text-shadow: 0 -1px transparent;
+}
+
+.bcontainer{
+  max-width:50%;
+  text-align:center;
+  margin-bottom:100px;
+  margin-top:100px;
+}
+
+.big-banner{
+  background-image:url('./components/images/About3.png');
+  width:100%;
+}
+
+.trail{
+  text-align:center;
+  color:white;
+}
+
+.container1{
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.jumbo{
+margin-top:20px;
+ padding: 7rem 0rem;
+ max-width:77%;
+ background-color:#fff;
+}
+
+.banner2{
+  background-image:url('./components/images/About10.png');
+}
+
+.ccontainer{
+  max-width:63%;
+  text-align:center;
+  margin-bottom:100px;
+  margin-top:100px;
+}
+
+.para{
+  margin-bottom:0px;
+}
+
+.hcontainer{
+  max-width:80%;
+}
+
+.figure-caption{
+  color:#000;
+}
+
+.hrsmall{
+  margin-left:0px;
+  border-top: 3px solid #139FF0;
+  max-width:30%;
+}
+
+.rounded{
+  border-radius: 0.75rem!important;
+}
+
+ul{
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+
+.fheading{
+  margin-left:15px;
+  margin-bottom: 20px;
+}
 
 
 
