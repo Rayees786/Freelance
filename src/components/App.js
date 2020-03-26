@@ -6,10 +6,10 @@ import Work from './Work';
 
 import {Carousel,Nav, Navbar, Figure, Container,Button, Card,CardColumns, Jumbotron, Image} from 'react-bootstrap';
 import "./project/src/assets/css/bootstrap.min.css";
-import "./project/src/assets/css/paper-kit.css";
-import "./project/src/assets/css/paper-kit.min.css";
-import "./project/src/assets/css/paper-kit.css.map";
-import "./project/src/assets/demo/demo.css";
+// import "./project/src/assets/css/paper-kit.css";
+// import "./project/src/assets/css/paper-kit.min.css";
+// import "./project/src/assets/css/paper-kit.css.map";
+// import "./project/src/assets/demo/demo.css";
 import {
   BrowserRouter as Router,
   Route,
