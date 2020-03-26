@@ -57,8 +57,7 @@ return(
       alt="First slide"
     />
     <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -69,8 +68,7 @@ return(
     />
 
     <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -81,8 +79,7 @@ return(
     />
 
     <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
@@ -211,7 +208,8 @@ return(
           <h2 className="heading">Whats great about it</h2>
          <br/>
          <br/>
-
+  
+  <Container>
   <Figure className="resize">
   <GearWide className="size"/>Settings
   <Figure.Caption >
@@ -251,14 +249,19 @@ return(
   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.  
   </Figure.Caption>
   </Figure>
+  </Container>
+
+  
   <h1 className="heading">Crowd favorites  </h1>
   <br/>
   <br/>
   <br/>
   <br/>
 
+  <Container>
+
   <CardColumns className="color">
-  <Card>
+  <Card className="Cardzz">
     <Card.Img variant="top" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" />
     <Card.Body>
       <Card.Title>Graphic designing</Card.Title>
@@ -268,7 +271,7 @@ return(
     </Card.Body>
   </Card>
   
-  <Card>
+  <Card className="Cardzz">
     <Card.Img variant="top" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" />
     <Card.Body>
       <Card.Title>Web Developer</Card.Title>
@@ -280,7 +283,7 @@ return(
   </Card>
   
 
-  <Card>
+  <Card className="Cardzz">
     <Card.Img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" />
   
     <Card.Body>
@@ -293,7 +296,7 @@ return(
     </Card.Body>
   </Card>
 
-  <Card>
+  <Card className="Cardzz">
     <Card.Img variant="top" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" />
     <Card.Body>
       <Card.Title>Web Designer</Card.Title>
@@ -303,7 +306,7 @@ return(
     </Card.Body>
   </Card>
   
-  <Card>
+  <Card className="Cardzz">
     <Card.Img variant="top" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" />
     <Card.Body>
       <Card.Title>Web Designe</Card.Title>
@@ -315,7 +318,7 @@ return(
   </Card>
   
 
-  <Card>
+  <Card className="Cardzz">
     <Card.Img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" />
   
     <Card.Body>
@@ -327,6 +330,11 @@ return(
     </Card.Body>
   </Card>
 </CardColumns>
+
+
+  </Container>
+
+  
 
 
 <Container fluid className="jumbo">
@@ -345,7 +353,7 @@ return(
 
   <Container>
   <Row>
-  <Col sm={6}>
+  <Col sm={6} className="Monde">
 <Card className="card1">
 <Card.Img src={shot}/>
 <Card.ImgOverlay>
@@ -366,7 +374,7 @@ return(
 
 </Card>
 </Col>
-<Col sm={6}>
+<Col sm={6} className="Monde">
 <Card className="card2">
 <Card.Img src={shot1}/>
 <Card.ImgOverlay>

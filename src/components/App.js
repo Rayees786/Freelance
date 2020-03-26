@@ -142,16 +142,17 @@ Sign up</NavLink>
     <div className="col-md-2 col-xs-12 location">
       <h4 className="mt-lg-0 mt-sm-4 hh">Apps</h4>
       <img src="https://www.freepnglogos.com/uploads/app-store-logo-png/apple-app-store-travel-awards-globestamp-7.png" width="200" alt="apple app store travel awards globestamp" />
+      <span><i className="fa fa-facebook mr-2"></i> <i class="fa fa-twitter mr-2"></i> <i class="fa fa-youtube mr-2"></i> <i class="fa fa-instagram mr-2"></i> <i class="fa fa-rss mr-2"></i></span>
       
     </div>
   </div>
-  <div className="row mt-5">
+  <hr className="hrbig"/>
     <div clasNames="col copyright">
       <p className=""><small className="text-white-50">© 2019. All Rights Reserved.</small></p>
     </div>
   </div>
 </div>
-</div>
+
 
 
 
