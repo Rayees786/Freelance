@@ -1,10 +1,11 @@
 
    
-.navbar .navbar-brand{
+.links{
 
 color: black !important;
 text-transform: none !important;
 margin-left: 100px !important;
+font-weight: bold;
 }
  
 .carousel-inner .carousel-item img, .carousel-inner.carousel-item a img{
@@ -17,16 +18,99 @@ margin-left: 100px !important;
 
 margin-top: 70px;
     text-align: center;
+    color: black;
+    font-weight: bold;
+}
+.heading2{
+
+
+  color: black;
+font-weight: bold;}
+
+.heading3{
+
+color: white;
+font-weight: bold;}
+
+
+
+
+.paragraph{
+
+
+  color: black;
+    font-weight: normal;
 }
 
+.paragraph1{
 
+  color: white;
+  font-weight: bolder;
+}
+
+.paragraph2{
+
+  color:black;
+  font-weight: bolder;
+ 
+}
 
 .size{
     height: 20% !important;
     width: 20% !important;
+}
+
+
+.size1{
+  height: 100% !important;
+  width: 30% !important;
+  color:blue;
 
 }
 
+.size2 {
+
+text-align: center;
+color: black;
+font-size: 15px;
+height: 100%;
+}
+
+.switch.btn{
+
+min-width: 10.0rem !important;
+min-height: 2.5rem !important;
+
+margin-left: 45%;
+border-radius: 24px;
+}
+.caption{
+
+  float: right;
+  margin-top: 2%;
+}
+
+.contcolor{
+background-color:#003660;
+width: 100%;
+height:100%;
+
+}
+
+
+.contcolor1{
+  background-color:#00aafd;
+  width: 100%;
+  height:100%;
+  
+  }
+
+.coldown{
+
+margin-top: 50px;
+
+
+}
 .resize{
 
 
@@ -141,12 +225,7 @@ margin-left: 20%;
     width: 10%;
     
   }
-/*   
-  .container{
-    max-width: 1290px;
-    padding-left: 60px;
-    
-  } */
+
   
   .hh{
     margin-left:13px;
@@ -159,3 +238,14 @@ margin-left: 20%;
   .link2{
     margin-left:20px;
   }
+
+
+
+
+
+
+
+
+
+
+  

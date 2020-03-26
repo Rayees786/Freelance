@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from "react";
 import '../App.css';
+import Howitworks from './Howitworks';
 import {Carousel,Nav, Navbar, Figure, Container,Button, Card,CardColumns, Jumbotron, Image} from 'react-bootstrap';
 import   {Window,Alarm, Award, BarChart, EnvelopeFill,GearWide
 } from 'react-bootstrap-icons';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  NavLink,
+  Redirect
+} from "react-router-dom";
 
 import carousel from "./images/carousel.jpg";
 import logo from "./images/freelancerlogo.png";
@@ -33,30 +41,13 @@ function Signup() {
 return(
   <div className="width">
 
-  <Navbar bg="light" variant="dark">
-    <Navbar.Brand href="#home">
-      <img
-        alt=""
-        src={logo}
-        width="140"
-        height="40"
-        className="d-inline-block align-top"
-      />
-          <a class="navbar-brand" href="#">How it Works</a>
-          <a class="navbar-brand" href="#">Log In</a>
-          <a class="navbar-brand" href="#">Sign up</a>
-
-      
-    </Navbar.Brand>
-  </Navbar>
-
-  <Navbar bg="light" className="mt-1">
-    <Navbar.Brand href="#home">About Freelancing</Navbar.Brand>
-    <Navbar.Brand href="#home">Learn more</Navbar.Brand>
-
-  </Navbar>
-  
-
+<Navbar bg="light" className="mt-1">
+            <Navbar.Brand >
+              <NavLink className="links"to="/About" exact>About Freelancing</NavLink>
+              <NavLink className="links" to="/Learn" exact>Learn more</NavLink>
+              </Navbar.Brand>
+            </Navbar>
+            
 <Carousel >
   <Carousel.Item>
     <img
@@ -163,7 +154,9 @@ return(
 
 </Navbar.Brand>
   </Navbar>
-  <h1 className="heading"> Need Work done?</h1>
+  <h2 className="heading"> Need Work done?</h2>
+  <br/>
+  <br/>
   
 
   <Figure className="roundimages">
@@ -214,8 +207,9 @@ return(
 
 
 
-          <h1 className="heading">Whats great about it</h1>
-         
+          <h2 className="heading">Whats great about it</h2>
+         <br/>
+         <br/>
 
   <Figure className="resize">
   <GearWide className="size"/>Settings
@@ -376,67 +370,6 @@ return(
 </Jumbotron>
 
 
-<div className="mt-5 pt-5 pb-5 footer">
-<div className="container">
-  <div className="row">
-    <div className="col-md-3 col-xs-12 about-company">
-      <img src={free}/> <br/>
-      <span> <i className="fa fa-globe mr-3"></i> English - US (International)</span> <br/> <br/>
-      <span> <i className="fa fa-question-circle mr-3"></i> Help and Support </span>
-      
-
-    
-    </div>
-    <div className="col-md-2 col-xs-12 links1">
-      <h4 className="mt-md-0 mt-sm-3">Freelancer</h4>
-        <ul className="m-0 p-0">
-          <li>Categories</li>
-          <li>Projects</li>
-          <li>Contests</li>
-          <li>Freelancers</li>
-          <li>Enterprise</li>
-          <li>Preferred Freelancer Program</li>
-          <li>Project Management</li>
-          <li>Local Jobs</li>
-          <li>Showcase</li>
-          <li>API for Developers</li>
-        </ul>
-    </div>
-    <div className="col-md-2 col-xs-12 links2">
-      <h4 className="mt-lg-0 mt-sm-3">About</h4>
-        <ul className="m-0 p-0">
-          <li>About us</li>
-          <li>How it Works</li>
-          <li>Security</li>
-          <li>Investor</li>
-          <li>Sitemap</li>
-          <li>Quotes</li>
-          <li>News</li>
-        </ul>
-    </div>
-    <div className="col-md-2 col-xs-12 links3">
-      <h4 className="mt-lg-0 mt-sm-3">Terms</h4>
-        <ul className="m-0 p-0">
-          <li>Privacy Policy</li>
-          <li>Terms and Conditions</li>
-          <li>Copyright Policy</li>
-          <li>Code of Conduct</li>
-          <li>Fees and Charges</li>
-        </ul>
-    </div>
-    <div className="col-md-2 col-xs-12 location">
-      <h4 className="mt-lg-0 mt-sm-4 hh">Apps</h4>
-      <img src="https://www.freepnglogos.com/uploads/app-store-logo-png/apple-app-store-travel-awards-globestamp-7.png" width="200" alt="apple app store travel awards globestamp" />
-      
-    </div>
-  </div>
-  <div className="row mt-5">
-    <div clasNames="col copyright">
-      <p className=""><small className="text-white-50">© 2019. All Rights Reserved.</small></p>
-    </div>
-  </div>
-</div>
-</div>
 
 
 </div>
