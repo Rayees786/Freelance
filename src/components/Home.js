@@ -32,10 +32,7 @@ import free from './images/Free.png';
 import axios from "axios";
 
 import "./project/src/assets/css/bootstrap.min.css";
-// import "./project/src/assets/css/paper-kit.css";
-// import "./project/src/assets/css/paper-kit.min.css";
-// import "./project/src/assets/css/paper-kit.css.map";
-// import "./project/src/assets/demo/demo.css";
+
 
 function Home() {
 

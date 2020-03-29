@@ -3,13 +3,10 @@ import '../App.css';
 import Home from './Home';
 import Howitworks from './Howitworks';
 import Work from './Work';
+import Signup from './Signup';
 
 import {Carousel,Nav, Navbar, Figure, Container,Button, Card,CardColumns, Jumbotron, Image} from 'react-bootstrap';
 import "./project/src/assets/css/bootstrap.min.css";
-// import "./project/src/assets/css/paper-kit.css";
-// import "./project/src/assets/css/paper-kit.min.css";
-// import "./project/src/assets/css/paper-kit.css.map";
-// import "./project/src/assets/demo/demo.css";
 import {
   BrowserRouter as Router,
   Route,
@@ -43,19 +40,9 @@ class App extends React.Component {
                   className="d-inline-block align-top"
                 />
               
-              <NavLink className="links" to="/hire" exact>
-
-                How it Works</NavLink>
-                <NavLink className="links" to="/login" exact>
-
-Log in</NavLink>
-
-<NavLink  className="links"to="/signup" exact>
-
-Sign up</NavLink>
-
-                 
-                
+<NavLink className="links" to="/hire" exact> How it Works</NavLink>
+<NavLink className="links" to="/login" exact> Log in </NavLink>
+<NavLink  className="links"to="/signup" exact> Sign up</NavLink>               
               </Navbar.Brand>
             </Navbar>
           
@@ -78,7 +65,7 @@ Sign up</NavLink>
           </Route>
 
           <Route path="/signup">
-            <h1>This is sign up page</h1>
+            <Signup/>
           </Route>
          
 

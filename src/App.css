@@ -317,6 +317,29 @@ ul{
 
 
 
+.toggle1{
+  border-radius: 1.25rem !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  background-color: orange !important;
+  border-color: grey !important;
+}
+
+.toggle2{
+  border-radius: 1.25rem !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  background-color: white !important;
+  color:#000 !important;
+  border-color: grey !important;
+}
+
+.btn-group{
+  margin-left:41%;
+  margin-top:5%;
+}
+
+
 
 
 
