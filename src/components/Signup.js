@@ -13,7 +13,7 @@ class Signup extends React.Component {
         username:"",
         password:"",
         cpassword:"",
-        role:"freelancer", 
+        role:"Freelancer", 
         error:false
     }
 

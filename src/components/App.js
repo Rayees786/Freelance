@@ -2,8 +2,10 @@ import React, { Fragment } from 'react';
 import '../App.css';
 import Home from './Home';
 import Howitworks from './Howitworks';
-import Work from './Work';
+// import Work from './Work';
 import Signup from './Signup';
+import Login from './Login';
+
 
 import {Carousel,Nav, Navbar, Figure, Container,Button, Card,CardColumns, Jumbotron, Image} from 'react-bootstrap';
 import "./project/src/assets/css/bootstrap.min.css";
@@ -42,7 +44,8 @@ class App extends React.Component {
               
 <NavLink className="links" to="/hire" exact> How it Works</NavLink>
 <NavLink className="links" to="/login" exact> Log in </NavLink>
-<NavLink  className="links"to="/signup" exact> Sign up</NavLink>               
+<NavLink className="links" to="/signup" exact> Sign up </NavLink> 
+<NavLink className="links" to="/dashboard" exact> Dashboard </NavLink>         
               </Navbar.Brand>
             </Navbar>
           
@@ -56,16 +59,17 @@ class App extends React.Component {
           <Route path="/hire" exact>
             <Howitworks></Howitworks>
           </Route>
-          <Route path="/work" exact>
-            <Work></Work>
-          </Route>
 
           <Route path="/login">
-            <h1>This is log in page</h1>
+            <Login/>
           </Route>
 
           <Route path="/signup">
             <Signup/>
+          </Route>
+
+          <Route path="/dashboard">
+            <h1> This is your dashboard </h1>
           </Route>
          
 
