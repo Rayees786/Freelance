@@ -39,12 +39,12 @@ function Home() {
 return(
   <div className="width">
 
-<Navbar bg="light" className="mt-1">
+{/* <Navbar bg="light" className="mt-1">
             <Navbar.Brand >
               <NavLink className="links"to="/About" exact>About Freelancing</NavLink>
               <NavLink className="links" to="/Learn" exact>Learn more</NavLink>
               </Navbar.Brand>
-            </Navbar>
+            </Navbar> */}
             
 <Carousel >
   <Carousel.Item>
@@ -359,7 +359,7 @@ return(
 <br/>
 <br/>
   <Card.Body>
-    <Card.Title> <b>42 million professionals <br/> on demand </b></Card.Title>
+    <Card.Title className="one"> <p> <b>42 million professionals <br/> on demand </b> </p></Card.Title>
     <Card.Text>
     Why hire people when you can <br/> simply integrate our talented <br/> cloud workforce instead?
     </Card.Text>
@@ -379,7 +379,7 @@ return(
 <br/>
 <br/>
   <Card.Body>
-    <Card.Title><b>Company budget? Get <br/> more done for less </b></Card.Title>
+    <Card.Title className="two"><p> <b>Company budget? Get <br/> more done for less </b> </p></Card.Title>
     <Card.Text>
     Use our workforce of 42 million to <br/> help your business achieve more.
     </Card.Text>

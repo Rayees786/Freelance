@@ -32,7 +32,7 @@ class App extends React.Component {
             
 <Router>
 
-            <Navbar bg="light" variant="dark">
+            <Navbar  collapseOnSelect expand="lg">
               <Navbar.Brand  href="./">
                 <img
                   alt=""
@@ -41,12 +41,20 @@ class App extends React.Component {
                   height="40"
                   className="d-inline-block align-top"
                 />
-              
-<NavLink className="links" to="/hire" exact> How it Works</NavLink>
-<NavLink className="links" to="/login" exact> Log in </NavLink>
-<NavLink className="links" to="/signup" exact> Sign up </NavLink> 
-<NavLink className="links" to="/dashboard" exact> Dashboard </NavLink>         
               </Navbar.Brand>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <NavLink to="/hire" exact> How it Works</NavLink>
+              <NavLink to="#"> Browse Jobs </NavLink>
+            </Nav>
+
+            <Nav>
+              <NavLink to="/login" exact> Log in </NavLink>
+              <NavLink to="/signup" exact> Sign up </NavLink> 
+              <Button variant="outline-primary" className="button11"> Post a Project </Button>
+            </Nav>
+            </Navbar.Collapse>            
             </Navbar>
           
             
@@ -80,6 +88,8 @@ class App extends React.Component {
 
 
             </Router>
+
+            <hr></hr>
           
             <div className="mt-5 pt-5 pb-5 footer">
 <div className="container">

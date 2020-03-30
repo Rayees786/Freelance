@@ -334,14 +334,47 @@ ul{
   border-color: grey !important;
 }
 
+
 .btn-group{
   margin-left:41%;
   margin-top:5%;
 }
 
+.one{
+  text-align: right;
+}
 
+.two{
+  text-align:left;
+}
 
+/* .nav2{
+  margin-right: 20px;
+} */
 
+.navbar-collapse{
+ 
+  margin-right: 150px;
+  
+  
+}
+
+.navbar-brand{
+  margin-left:150px;
+}
+.button11{
+  background-color: orange !important;
+  color:white !important;
+  border-color: grey !important;
+}
+
+a{
+  margin-right: 20px;
+}
+
+.navbar-nav > a{
+  margin-top:5px;
+}
 
 
 
