@@ -48,36 +48,39 @@ import BootstrapSwitchButton from "bootstrap-switch-button-react";
 
 import "../App.css";
 
-class Howitworks extends React.Component {
-  state = { work: false };
+function Howitworks() {
+  const [work, setWork] = useState(false);
 
-  render() {
-    return (
-      <>
-        <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
-          <ToggleButton
-            value={1}
-            className="toggle1"
-            onClick={() => {
-              this.setState({ work: false });
-            }}
-          >
-            I want to hire
-          </ToggleButton>
-          <ToggleButton
-            value={2}
-            className="toggle2"
-            onClick={() => {
-              this.setState({ work: true });
-            }}
-          >
-            I want to work
-          </ToggleButton>
-        </ToggleButtonGroup>
+  useEffect(() => {
+    console.log("Hello");
+  }, []);
 
-        {this.state.work ? <Work /> : <Hire />}
-      </>
-    );
-  }
+  return (
+    <>
+      <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
+        <ToggleButton
+          value={1}
+          className="toggle1"
+          onClick={() => {
+            setWork(false);
+          }}
+        >
+          I want to hire
+        </ToggleButton>
+        <ToggleButton
+          value={2}
+          className="toggle2"
+          onClick={() => {
+            setWork(true);
+          }}
+        >
+          I want to work
+        </ToggleButton>
+      </ToggleButtonGroup>
+
+      {work ? <Work /> : <Hire />}
+    </>
+  );
 }
+
 export default Howitworks;
