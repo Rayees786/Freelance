@@ -5,7 +5,7 @@ import Howitworks from "./Howitworks";
 // import Work from './Work';
 import Signup from "./Signup";
 import Login from "./Login";
-
+import Postaproject from "./Postaproject";
 import {
   Carousel,
   Nav,
@@ -30,12 +30,14 @@ import Header from "./Header";
 
 import logo from "./images/freelancerlogo.png";
 import free from "./images/Free.png";
+import PostaProject from "./Postaproject";
 
 class App extends React.Component {
   render() {
     return (
       <div className="width">
         <Router>
+
           <Route path="/" component={Header}></Route>
 
           <Switch>
@@ -57,6 +59,11 @@ class App extends React.Component {
 
             <Route path="/dashboard">
               <h1> This is your dashboard </h1>
+            </Route>
+
+            <Route path="/Postaproject" >
+              
+            <h1> This is your dashboard </h1>
             </Route>
 
             <Route>

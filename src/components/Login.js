@@ -7,15 +7,21 @@ import {Input, Label} from 'reactstrap';
 import {
     Redirect
   } from "react-router-dom";
+import PostaProject from './Postaproject';
 
 class Login extends React.Component {
-
-    state = {
-
-        username:"",
-        password:"",
-        error:false,
-        loggedin:false
+  constructor(props) {
+    super(props);
+    this.state = { username:"",
+    password:"",
+    error:false,
+    loggedin:false};
+  }
+   
+    componentDidMount() {
+      if (localStorage.getItem("token")) {
+        this.setState({ loggedin: true });
+      }
     }
 
   render(){
@@ -32,7 +38,7 @@ class Login extends React.Component {
         }
 
         {
-            this.state.loggedin ? (<Redirect to="/dashboard"></Redirect>) : null
+            this.state.loggedin ? (<Redirect to={{pathname:"/Postaproject", state:{loggedin:this.state.loggedin}}} ></Redirect>) : null
 
         }
 
@@ -65,6 +71,7 @@ class Login extends React.Component {
       </Button>
     </Form>
       </Card.Body>
+
     </Card>  
       )
   }

@@ -55,7 +55,7 @@ function Header(props) {
               {" "}
               Sign up{" "}
             </NavLink>
-            <Button variant="outline-primary" className="button11">
+            <Button variant="outline-primary" className="button11" href="/Postaproject">
               {" "}
               Post a Project{" "}
             </Button>

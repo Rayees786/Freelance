@@ -51,15 +51,11 @@ import axios from "axios";
 
 import "./project/src/assets/css/bootstrap.min.css";
 
-function Home() {
+function Home(props) {
+
+  console.log(props);
   return (
     <div className="width">
-      {/* <Navbar bg="light" className="mt-1">
-            <Navbar.Brand >
-              <NavLink className="links"to="/About" exact>About Freelancing</NavLink>
-              <NavLink className="links" to="/Learn" exact>Learn more</NavLink>
-              </Navbar.Brand>
-            </Navbar> */}
 
       <Carousel>
         <Carousel.Item>
