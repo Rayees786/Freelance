@@ -4,9 +4,12 @@ import '../index.css';
 import axios from 'axios';
 import { Card, Form, Button, Col, Row, Alert, FormGroup} from 'react-bootstrap';
 import {Input, Label} from 'reactstrap';
+<<<<<<< HEAD
 import {
   Redirect
 } from "react-router-dom";
+=======
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
 
 class Signup extends React.Component {
 
@@ -17,6 +20,7 @@ class Signup extends React.Component {
         password:"",
         cpassword:"",
         role:"Freelancer", 
+<<<<<<< HEAD
         error:false,
         signup:false,
        
@@ -26,6 +30,14 @@ class Signup extends React.Component {
   render(){
     return (
       
+=======
+        error:false
+    }
+
+  render(){
+    return (
+
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
         <Card className="Card">
       <Card.Body>
         <Card.Title>  
@@ -40,7 +52,11 @@ class Signup extends React.Component {
         <Form className="signupform" onSubmit={(e)=>{
             e.preventDefault();
             this.setState({ error: false });
+<<<<<<< HEAD
                 axios.post("http://freelancerlaravel.test/api/signup", {
+=======
+                axios.post("http://freelancer.test/api/signup", {
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
                 name: this.state.name,
                 email: this.state.email,
                 username: this.state.username,
@@ -51,9 +67,13 @@ class Signup extends React.Component {
             })
             .then((response)=>{
                 this.setState({name:"",email:"",username:"",password:"",cpassword:""});
+<<<<<<< HEAD
                 this.setState({signup:true})
                 
                       
+=======
+                alert("You've been successfully signed up");               
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
             })
             .catch(()=>{this.setState({error:true});
         })
@@ -62,6 +82,7 @@ class Signup extends React.Component {
             
     
         }}>
+<<<<<<< HEAD
 
 
 
@@ -69,6 +90,8 @@ class Signup extends React.Component {
 {this.state.signup? (<Redirect to={{pathname:"/login", state: {name:this.state.name}}}></Redirect>) : null}
 
 
+=======
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
         <Form.Label>Name</Form.Label>
         <Form.Control type="text" placeholder="Enter your Name" value={this.state.name} onChange={(e)=>{
             this.setState({name:e.target.value})
@@ -107,9 +130,15 @@ class Signup extends React.Component {
     </Form>
       </Card.Body>
     </Card>  
+<<<<<<< HEAD
         )
   }
         
+=======
+      )
+  }
+
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
   
 }
 

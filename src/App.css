@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
 .links {
   color: black !important;
   text-transform: none !important;
@@ -111,6 +114,10 @@
 
 .card-columns {
   grid-column-gap: 0 !important;
+<<<<<<< HEAD
+=======
+  width: 100%;
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
 }
 
 .footer {
@@ -332,8 +339,11 @@ a {
 .navbar-nav > a {
   margin-top: 5px;
 }
+<<<<<<< HEAD
 div .button12 {
   background-color: orange !important;
   color: white !important;
   border-color: grey !important;
 margin-left: 300px;}
+=======
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97

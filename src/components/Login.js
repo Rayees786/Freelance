@@ -7,6 +7,7 @@ import {Input, Label} from 'reactstrap';
 import {
     Redirect
   } from "react-router-dom";
+<<<<<<< HEAD
 
 class Login extends React.Component {
 
@@ -17,6 +18,23 @@ class Login extends React.Component {
         name:"",
         error:false,
         loggedin:false
+=======
+import PostaProject from './Postaproject';
+
+class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { username:"",
+    password:"",
+    error:false,
+    loggedin:false};
+  }
+   
+    componentDidMount() {
+      if (localStorage.getItem("token")) {
+        this.setState({ loggedin: true });
+      }
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
     }
 
   render(){
@@ -33,7 +51,11 @@ class Login extends React.Component {
         }
 
         {
+<<<<<<< HEAD
             this.state.loggedin ? (<Redirect to={{pathname:"/dashboard" , state: {username:this.state.username,name:this.name}}}></Redirect>) : null
+=======
+            this.state.loggedin ? (<Redirect to={{pathname:"/Postaproject", state:{loggedin:this.state.loggedin}}} ></Redirect>) : null
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
 
         }
 
@@ -41,14 +63,21 @@ class Login extends React.Component {
         <Form className="signupform" onSubmit={(e)=>{
             e.preventDefault();
             this.setState({error:false})
+<<<<<<< HEAD
             axios.post("http://freelancerlaravel.test/api/login",{
+=======
+            axios.post("http://freelancer.test/api/login",{
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
             username: this.state.username,
             password: this.state.password
          }).then((response)=>{ 
 
             localStorage.setItem("token", response.data.token);
+<<<<<<< HEAD
             this.name=response.data.user.name;            
 
+=======
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
             this.setState({loggedin:true});
          }).catch(()=>{
              this.setState({error:true})
@@ -63,11 +92,19 @@ class Login extends React.Component {
             this.setState({password:e.target.value})
         }}/> <br/>
      
+<<<<<<< HEAD
       <Button   disabled={!this.state.username || !this.state.password} variant="primary" type="submit" block>
+=======
+      <Button disabled={!this.state.username || !this.state.password} variant="primary" type="submit" block>
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
           Login
       </Button>
     </Form>
       </Card.Body>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
     </Card>  
       )
   }

@@ -1,0 +1,93 @@
+.postcard{
+    margin: 0 auto;
+    margin-top: 30px;
+    max-width: 800px;
+  
+  }
+
+  .form{
+    margin-left:17px;
+    margin-right:17px;
+    margin-bottom:55px;
+    margin-top: 40px;
+  }
+
+.dropzone {
+	width: 100%;
+	height: 65px;
+	border: 1px dashed #999;
+	border-radius: 3px;
+    display: inline-block;
+}
+
+
+.upload-input {
+	position: relative;
+	top: -70px;
+	left: 0;
+	width: 100%;
+	height: 65px;
+	opacity: 0;
+}
+
+.btnnn {
+	display: inline-block;
+	width: 140px;
+	height: 40px;
+	background:#FFF;
+	color:#000;
+    border-radius: 3px;
+    border-color: #000;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.uploadbtn{
+    position: absolute;
+     display:inline-block;
+     text-align:justify;
+     margin-left:15px;
+     margin-top:5px;
+     font-size: 14px;
+     width:50%;
+ }
+
+ img.image{
+     max-width:95%;
+     margin-top: 30px;
+ }
+
+
+ .input-group-sm>.form-control:not(textarea){
+     max-width: 15%;
+ }
+
+ .badge1{
+     width:100%;
+     line-height: 3;
+     border-radius: 0.15rem;
+     margin-bottom: 10px; 
+     background-color: skyblue;
+ }
+
+ .badge2{
+    width:100%;
+    line-height: 3;
+    border-radius: 0.15rem;
+    margin-bottom: 10px; 
+    background-color: #ddf5d3;
+}
+
+.hundred{
+    text-align: right;
+}
+
+.hund{
+    margin-bottom:10px;
+}
+
+
+ .contest{
+     margin-left: auto;
+     margin-right: auto;
+ }
+

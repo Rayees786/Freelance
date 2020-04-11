@@ -1,17 +1,26 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import "../App.css";
 import "../Dashboard.css";
 
+=======
+import React, { Fragment } from "react";
+import "../App.css";
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
 import Home from "./Home";
 import Howitworks from "./Howitworks";
 // import Work from './Work';
 import Signup from "./Signup";
 import Login from "./Login";
+<<<<<<< HEAD
 import Header from "./Header";
 import Profile from "./Profile";
 import Browseprojects from "./Browseprojects";
 
 
+=======
+import Postaproject from "./Postaproject";
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
 import {
   Carousel,
   Nav,
@@ -32,6 +41,7 @@ import {
   NavLink
 } from "react-router-dom";
 
+<<<<<<< HEAD
 // import Header from "./Header";
 import Dashboard from "./Dashboard";
 
@@ -60,6 +70,22 @@ function App(props) {
           ></Route>
 
         
+=======
+import Header from "./Header";
+
+import logo from "./images/freelancerlogo.png";
+import free from "./images/Free.png";
+import PostaProject from "./Postaproject";
+
+class App extends React.Component {
+  render() {
+    return (
+      <div className="width">
+        <Router>
+
+          <Route path="/" component={Header}></Route>
+
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
           <Switch>
             <Route path="/" exact>
               <Home></Home>
@@ -69,6 +95,7 @@ function App(props) {
               <Howitworks></Howitworks>
             </Route>
 
+<<<<<<< HEAD
             <Route path="/browse" exact>
               <Browseprojects></Browseprojects>
             </Route>
@@ -102,6 +129,25 @@ function App(props) {
               <Signup />
             </Route>
             
+=======
+            <Route path="/login">
+              <Login />
+            </Route>
+
+            <Route path="/signup">
+              <Signup />
+            </Route>
+
+            <Route path="/dashboard">
+              <h1> This is your dashboard </h1>
+            </Route>
+
+            <Route path="/Postaproject" >
+              
+            <h1> This is your dashboard </h1>
+            </Route>
+
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
             <Route>
               <h1>404 Not Found</h1>
             </Route>
@@ -192,6 +238,10 @@ function App(props) {
         </div>
       </div>
     );
+<<<<<<< HEAD
   
+=======
+  }
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
 }
 export default App;

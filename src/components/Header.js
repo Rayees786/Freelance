@@ -24,11 +24,16 @@ import {
 } from "react-router-dom";
 
 function Header(props) {
+<<<<<<< HEAD
 
 
   if (props.location.pathname != "/login" && props.location.pathname != "/dashboard" && props.location.pathname != "/profile" ) {
     return (
       
+=======
+  if (props.location.pathname != "/login") {
+    return (
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
       <Navbar collapseOnSelect expand="lg">
         <Navbar.Brand href="./">
           <img
@@ -46,7 +51,11 @@ function Header(props) {
               {" "}
               How it Works
             </NavLink>
+<<<<<<< HEAD
             <NavLink to="/browse"> Browse Jobs </NavLink>
+=======
+            <NavLink to="#"> Browse Jobs </NavLink>
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
           </Nav>
 
           <Nav>
@@ -58,15 +67,20 @@ function Header(props) {
               {" "}
               Sign up{" "}
             </NavLink>
+<<<<<<< HEAD
 
           
             <Button variant="outline-primary" className="button11">
+=======
+            <Button variant="outline-primary" className="button11" href="/Postaproject">
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
               {" "}
               Post a Project{" "}
             </Button>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+<<<<<<< HEAD
  );
  
   } else {
@@ -75,6 +89,12 @@ function Header(props) {
 
 
 
+=======
+    );
+  } else {
+    return null;
+  }
+>>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
 }
 
 export default Header;
