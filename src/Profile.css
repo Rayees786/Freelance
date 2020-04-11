@@ -1,0 +1,48 @@
+.justify-content-md-center col{
+
+
+    background-color: black;
+    color: white;
+}
+.cols{
+
+    background-color: white;
+    height: 700px;
+
+
+}
+/* body{
+
+    background-color: whitesmoke;
+} */
+
+.cols1{
+
+    background-color: white;
+    height: 700px;
+
+
+}
+.cols2{
+
+    background-color: white;
+
+}
+
+.container1{
+
+    height: 40%;
+    background-color: 	#FFFAFA;
+}
+
+.container2{
+
+    height: 30%;
+    background-color: 	#FFFAFA;
+}
+.container4{
+
+
+    background-color: 	#FFFAFA;
+    height: 500px;
+}

@@ -1,0 +1,145 @@
+
+
+    body{
+
+        background-color: whitesmoke;
+      }
+
+body .drop{
+
+
+     background-color: white;
+     color: black;
+     margin-left: 100px;
+     border: none;
+}
+
+.form-inline{
+
+    width: 300px;
+}
+body .drop:hover{
+
+    background-color: white;
+    color: black;
+    border: none;
+
+}
+
+.dropdown-basic{
+
+
+    border: black ;
+    width: 80px;
+}
+.container7 .navbar1{
+    background-color: whitesmoke;
+}
+.container6{
+
+
+    background-color: white;
+    border: gray;
+    height: 1400px;
+}
+
+    .container7{
+
+background-color: whitesmoke;
+min-height: 48%;
+    }
+   
+ body .container15{
+
+    width: 50%;
+    margin-top: 180px;
+ }
+
+
+
+ .d-inline-block {
+    
+    margin-left: 120px !important;
+}
+
+
+
+.container7 .btn-primary{
+
+width: 150px;
+margin-left: 90px;
+
+}
+.container7 a{
+
+margin-left: auto;
+margin-right: auto;
+}
+
+.container10{
+    min-height:16%;
+    width: 50%;
+    background-color:#2259b5;
+    color: white;
+    position: relative;
+
+}
+
+.container11{
+
+background-color: whitesmoke;
+min-height:23%;
+
+}
+
+.container12{
+  min-height:23%;
+    background-color: whitesmoke;
+    color: black; 
+
+}
+.container11 .range{
+
+    -webkit-appearance:none;
+    background-color: #2259b5;
+    height: 15px;
+}
+.container14 {
+    width: 100%;
+    background-color: #ddd;
+
+  }
+  
+  .skills {
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+  }
+  .css {width: 80%; 
+    background-color: #2196F3;
+    
+
+} 
+
+.raf-activity{
+  
+    margin-top: -108px !important;
+    width: 900px;
+    margin-left: -200px !important;
+height: 400px;
+}
+
+
+
+.container7 .cont12{
+background-color:white;
+min-height: 85px;
+position: relative;
+}
+
+
+ .btns .btn-primary{
+
+float: right;
+}
