@@ -51,7 +51,6 @@ import axios from "axios";
 
 import "./project/src/assets/css/bootstrap.min.css";
 
-<<<<<<< HEAD
 function Home() {
   return (
     <div className="width">
@@ -61,13 +60,6 @@ function Home() {
               <NavLink className="links" to="/Learn" exact>Learn more</NavLink>
               </Navbar.Brand>
             </Navbar> */}
-=======
-function Home(props) {
-
-  console.log(props);
-  return (
-    <div className="width">
->>>>>>> ad3d40500a09457386ab5e9df8677adc4d57cd97
 
       <Carousel>
         <Carousel.Item>
