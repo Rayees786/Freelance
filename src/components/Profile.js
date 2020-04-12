@@ -1,37 +1,22 @@
 import React ,{useState, useEffect}from "react";
 import "../Profile.css";
 import adv from "./images/adv.png";
-import { StreamApp,NotificationDropdown,FlatFeed,Activity,LikeButton } from 'react-activity-feed';
 import 'react-activity-feed/dist/index.css';
 import {
   Nav,
   Navbar,
-  Figure,
   Container,
-  Form,
-  FormControl,
   Button,
-  Card,
-  Dropdown,
-  CardColumns,
-  Jumbotron,
-  Image, Row,
+  Row,
   Col,
-  NavDropdown
 } from "react-bootstrap";
 import {
     Window
     
   } from "react-bootstrap-icons";
 import logo from "./images/freelancerlogo.png";
-import free from "./images/Free.png";
-
-
 
 import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
   NavLink
 } from "react-router-dom";
 

@@ -68,7 +68,7 @@ function App(props) {
               <Dashboard login={state.loggedin}></Dashboard>
             </Route>
 
-            <Route path="/Postaproject">
+            <Route path="/Postaproject" exact>
               <Postaproject login={state.loggedin}/>
             </Route>
 
@@ -143,15 +143,15 @@ function App(props) {
                 />
                 <span>
                   <i className="fa fa-facebook mr-2"></i>{" "}
-                  <i class="fa fa-twitter mr-2"></i>{" "}
-                  <i class="fa fa-youtube mr-2"></i>{" "}
-                  <i class="fa fa-instagram mr-2"></i>{" "}
-                  <i class="fa fa-rss mr-2"></i>
+                  <i className="fa fa-twitter mr-2"></i>{" "}
+                  <i className="fa fa-youtube mr-2"></i>{" "}
+                  <i className="fa fa-instagram mr-2"></i>{" "}
+                  <i className="fa fa-rss mr-2"></i>
                 </span>
               </div>
             </div>
             <hr className="hrbig" />
-            <div clasNames="col copyright">
+            <div className="col copyright">
               <p className="">
                 <small className="text-white-50">
                   © 2019. All Rights Reserved.

@@ -1,6 +1,5 @@
-import React from 'react';
+import React,{useState}from 'react';
 import '../index.css';
-// import '../App.css';
 import axios from 'axios';
 import { Card, Form, Button, Col, Row, Alert, FormGroup } from 'react-bootstrap';
 import { Input, Label } from 'reactstrap';
@@ -8,22 +7,18 @@ import {
   Redirect
 } from "react-router-dom";
 
-class Signup extends React.Component {
-
-  state = {
-    name: "",
-    email: "",
-    username: "",
-    password: "",
-    cpassword: "",
-    role: "Freelancer",
-    error: false,
-    signup: false,
-
-  }
+function Signup(){
 
 
-  render() {
+  const[state,setState]=useState({name: "",
+  email: "",
+  username: "",
+  password: "",
+  cpassword: "",
+  role: "Freelancer",
+  error: false,
+  signup: false,});
+
     return (
 
       <Card className="Card">
@@ -33,30 +28,30 @@ class Signup extends React.Component {
           </Card.Title>
 
           {
-            this.state.error ? (<Alert variant="danger"> Please check your form fields again </Alert>) : null
+            state.error ? (<Alert variant="danger"> Please check your form fields again </Alert>) : null
           }
 
 
           <Form className="signupform" onSubmit={(e) => {
             e.preventDefault();
-            this.setState({ error: false });
+            setState({ ...state, error: false });
             axios.post("http://freelancerlaravel.test/api/signup", {
-              name: this.state.name,
-              email: this.state.email,
-              username: this.state.username,
-              password: this.state.password,
-              cpassword: this.state.cpassword,
-              role: this.state.role
+              name: state.name,
+              email: state.email,
+              username: state.username,
+              password: state.password,
+              cpassword: state.cpassword,
+              role: state.role
 
             })
               .then((response) => {
-                this.setState({ name: "", email: "", username: "", password: "", cpassword: "" });
-                this.setState({ signup: true })
+                setState({ ...state, name: "", email: "", username: "", password: "", cpassword: "" });
+                setState({ ...state, signup: true })
 
 
               })
               .catch(() => {
-                this.setState({ error: true });
+                setState({ ...state, error: true });
               })
 
 
@@ -67,42 +62,42 @@ class Signup extends React.Component {
 
 
 
-            {this.state.signup ? (<Redirect to={{ pathname: "/login", state: { name: this.state.name } }}></Redirect>) : null}
+            {state.signup ? (<Redirect to={{ pathname: "/login", state: { name: state.name } }}></Redirect>) : null}
 
 
             <Form.Label>Name</Form.Label>
-            <Form.Control type="text" placeholder="Enter your Name" value={this.state.name} onChange={(e) => {
-              this.setState({ name: e.target.value })
+            <Form.Control type="text" placeholder="Enter your Name" value={state.name} onChange={(e) => {
+              setState({...state, name: e.target.value })
 
             }} /> <br />
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" value={this.state.email} onChange={(e) => {
-              this.setState({ email: e.target.value })
+            <Form.Control type="email" placeholder="Enter email" value={state.email} onChange={(e) => {
+              setState({...state, email: e.target.value })
             }} /> <br />
             <Form.Label>Username</Form.Label>
-            <Form.Control type="text" placeholder="Choose your Username" value={this.state.username} onChange={(e) => {
-              this.setState({ username: e.target.value })
+            <Form.Control type="text" placeholder="Choose your Username" value={state.username} onChange={(e) => {
+              setState({ ...state, username: e.target.value })
             }} /> <br />
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" value={this.state.password} onChange={(e) => {
-              this.setState({ password: e.target.value })
+            <Form.Control type="password" placeholder="Password" value={state.password} onChange={(e) => {
+              setState({ ...state, password: e.target.value })
             }} /> <br />
             <Form.Label>Confirm Password</Form.Label>
-            <Form.Control type="password" placeholder="Confirm Password" value={this.state.cpassword} onChange={(e) => {
-              this.setState({ cpassword: e.target.value })
+            <Form.Control type="password" placeholder="Confirm Password" value={state.cpassword} onChange={(e) => {
+              setState({ ...state, cpassword: e.target.value })
             }} />
             <br />
             <FormGroup>
               <Label for="role"> Select your user type </Label>
               <Input type="select" name="select" id="role" onChange={(e) => {
-                this.setState({ role: e.target.value })
+                setState({...state, role: e.target.value })
               }}>
                 <option> Employer </option>
                 <option> Freelancer </option>
               </Input>
             </FormGroup>
 
-            <Button disabled={!this.state.name || !this.state.email || !this.state.username || !this.state.password || !this.state.cpassword} variant="primary" type="submit" block>
+            <Button disabled={!state.name || !state.email || !state.username || !state.password || !state.cpassword} variant="primary" type="submit" block>
               Sign Up
       </Button>
           </Form>
@@ -110,8 +105,5 @@ class Signup extends React.Component {
       </Card >
     )
   }
-
-
-}
 
 export default Signup;

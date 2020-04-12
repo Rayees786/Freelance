@@ -4,33 +4,23 @@ import {
   Row,
   Col,
   Button,
-  Input,
   Image,
   Card,
   CardDeck,
   Nav,
   Jumbotron,
-  ToggleButtonGroup,
-  ToggleButton,
-  Figure
 } from "react-bootstrap";
 
-import sshot3 from "./images/sshot3.jpg";
-import sshot4 from "./images/sshot4.jpg";
 import sshot from "./images/Sshot.jpg";
 import sshot1 from "./images/sshot1.jpg";
 import about1 from "./images/About1.png";
 import about2 from "./images/About2.png";
-import about3 from "./images/About3.png";
 import about4 from "./images/About4.png";
 import about5 from "./images/About5.png";
 import about6 from "./images/About6.png";
 import about7 from "./images/About7.png";
 import about8 from "./images/About8.png";
 import about9 from "./images/About9.png";
-import about11 from "./images/About11.png";
-import about12 from "./images/About12.png";
-import about13 from "./images/About13.png";
 
 import { Map, InfoSquare, KanbanFill } from "react-bootstrap-icons";
 

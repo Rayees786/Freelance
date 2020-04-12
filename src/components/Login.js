@@ -1,34 +1,18 @@
-import React,{useState, useEffect} from 'react';
+import React,{useState} from 'react';
 import '../index.css';
 import axios from 'axios';
-import { Card, Form, Button, Col, Row, Alert, FormGroup} from 'react-bootstrap';
+import { Card, Form, Button, Alert} from 'react-bootstrap';
 import {
     Redirect
   } from "react-router-dom";
 
 
 function Login(props){
-  // constructor(props) {
-  //   super(props);
-  //   this.state = { username:"",
-  //   password:"",
-  //   error:false,
-  //   loggedin:false
-  //   };
-  // }
 
   const[state,setState]=useState({username:"",
   password:"",
   error:false});
 
-
-
-    // componentDidMount() {
-    //   if (localStorage.getItem("token")) {
-    //     this.setState({ loggedin: true });
-    //   }
-      
-    // }
     return (
       
 
@@ -43,7 +27,7 @@ function Login(props){
         }
 
         {
-            this.props.loggedin ? (<Redirect to="/"></Redirect>) : null
+            props.loggedin ? (<Redirect to="/"></Redirect>) : null
 
         }
 
