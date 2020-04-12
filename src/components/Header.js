@@ -1,34 +1,20 @@
 import React from "react";
 
 import {
-  Carousel,
   Nav,
   Navbar,
-  Figure,
-  Container,
-  Button,
-  Card,
-  CardColumns,
-  Jumbotron,
-  Image
+  Button
 } from "react-bootstrap";
 
 import logo from "./images/freelancerlogo.png";
-import free from "./images/Free.png";
 
 import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
   NavLink
 } from "react-router-dom";
 
 function Header(props) {
-
-
-  if (props.location.pathname != "/login" && props.location.pathname != "/dashboard" && props.location.pathname != "/profile") {
+  if (props.location.pathname != "/login") {
     return (
-
       <Navbar collapseOnSelect expand="lg">
         <Navbar.Brand href="./">
           <img
@@ -46,7 +32,7 @@ function Header(props) {
               {" "}
               How it Works
             </NavLink>
-            <NavLink to="/browse"> Browse Jobs </NavLink>
+            <NavLink to="#"> Browse Jobs </NavLink>
           </Nav>
 
           <Nav>
@@ -58,9 +44,7 @@ function Header(props) {
               {" "}
               Sign up{" "}
             </NavLink>
-
-
-            <Button variant="outline-primary" className="button11">
+            <Button variant="outline-primary" className="button11" href="/Postaproject">
               {" "}
               Post a Project{" "}
             </Button>
@@ -68,13 +52,9 @@ function Header(props) {
         </Navbar.Collapse>
       </Navbar>
     );
-
   } else {
     return null;
   }
-
-
-
 }
 
 export default Header;

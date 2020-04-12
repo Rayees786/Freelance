@@ -1,38 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../App.css";
-import Howitworks from "./Howitworks";
 import {
   Carousel,
-  Nav,
   Navbar,
   Figure,
   Container,
   Button,
   Card,
   CardColumns,
-  Jumbotron,
   Image,
   Row,
   Col
 } from "react-bootstrap";
 import {
   Window,
-  Alarm,
   Award,
   BarChart,
   EnvelopeFill,
   GearWide
 } from "react-bootstrap-icons";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  NavLink,
-  Redirect
-} from "react-router-dom";
 
 import carousel from "./images/carousel.jpg";
-import logo from "./images/freelancerlogo.png";
 import carousel1 from "./images/carousel1.png";
 import logoclient1 from "./images/logomicrosoft.png";
 import logoclient2 from "./images/photoshop.png";
@@ -40,26 +28,19 @@ import logoclient3 from "./images/intel.png";
 import logoclient4 from "./images/ai.png";
 import logoclient5 from "./images/amazon.png";
 import logoclient6 from "./images/laliga.png";
-import icon1 from "./images/settings.png";
-import icon2 from "./images/settings.png";
 import screen from "./images/Screen.png";
 import shot from "./images/Shot1.png";
 import shot1 from "./images/Shot2.png";
-import free from "./images/Free.png";
-
-import axios from "axios";
-
 import "./project/src/assets/css/bootstrap.min.css";
 
-function Home() {
+
+
+
+function Home(props) {
+
+  console.log(props);
   return (
     <div className="width">
-      {/* <Navbar bg="light" className="mt-1">
-            <Navbar.Brand >
-              <NavLink className="links"to="/About" exact>About Freelancing</NavLink>
-              <NavLink className="links" to="/Learn" exact>Learn more</NavLink>
-              </Navbar.Brand>
-            </Navbar> */}
 
       <Carousel>
         <Carousel.Item>
