@@ -13,7 +13,7 @@ import {
 } from "react-router-dom";
 
 function Header(props) {
-  if (props.location.pathname != "/login") {
+  if (props.location.pathname != "/login"&&props.location.pathname != "/dashboard") {
     return (
       <Navbar collapseOnSelect expand="lg">
         <Navbar.Brand href="./">

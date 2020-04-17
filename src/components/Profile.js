@@ -1,4 +1,4 @@
-import React ,{useState, useEffect}from "react";
+import React ,{useState, useEffect} from "react";
 import "../Profile.css";
 import adv from "./images/adv.png";
 import 'react-activity-feed/dist/index.css';
@@ -9,6 +9,8 @@ import {
   Button,
   Row,
   Col,
+  Form,
+  ListGroup
 } from "react-bootstrap";
 import {
     Window
@@ -20,12 +22,16 @@ import {
   NavLink
 } from "react-router-dom";
 
+import axios from "axios";
+
 function Profile(props) {
 
+  
 
-    useEffect(() => {
-console.log(props);
-      }, []);
+  const[state,setState]=useState({edit:false, country:"", provience:"", city:"", phone:"", skype:"", git:"", id:props.id});
+
+  
+  console.log(state);
     return (
 <div>
 
@@ -68,31 +74,100 @@ console.log(props);
     <img alt="" width="98%"  height="35%" src={adv} /><br/><br/>
     <Container className="container1">
       <br/>
-     <Window></Window>  Mississauga<br/><br/>
-     <Window></Window>  Canada<br/><br/>
-     <Window></Window>  Rayees<br/><br/>
-     <Window></Window>  Rayees<br/><br/>
+     <Window></Window>  {props.country}<br/><br/>
+     <Window></Window>  {props.city},{props.provience}<br/><br/>
+     <Window></Window>  {props.phone}<br/><br/>
+     <Window></Window>  {props.skype}<br/><br/>
+     <Window></Window>  {props.id}<br/><br/>
      </Container>
     </Col>
-    <Col  className="cols1" lg="6">  <br/><h2>  hihihihih</h2><br/>
-    <p>I'm a tech geek. My focus is always to deliver the best.</p>
-<br/>
-<p>I have 3+ years Experience of Website Design in WordPress, HTML ,CSS and blogs etc
-I'm an Expert in:<p/>
-<ui>
-<li>✓ : HTML5, CSS3, Photoshop Web UI/UX Design, jQuery, Javascript, </li><br/>
-<li>✓ : Web Technologies Front End </li><br/>
-<li>✓ : HAML</li><br/>
-<li>✓ : CSS GRIDS</li><br/>
-<li>✓ : BOOTSTRAP</li><br/>
-</ui>
-<p>I will finish your tasks in a timely and efficient manner. 
-I aspire to help others reach their goals through the use of my knowledge and experience. My Motive is to make my employer happy without adding additional charges..
-</p>
-<p>
-Please don't hesitate to contact me with any opportunities. I am available 24 hours including weekend. I can work 40+ hours per week.
+    <Col  className="cols1" lg="6">  <br/><h2>  Your Profile </h2><br/>
 
-If you are looking for Websites work, I am the Right person for you.</p></p>
+    {state.edit ?  (<Form onSubmit={(e)=>{
+      e.preventDefault();
+      axios.put("http://freelancer.test/api/updateprofile",{
+        country: state.country,
+        provience: state.provience,
+        city: state.city,
+        phone: state.phone,
+        skype: state.skype,
+        git: state.git
+      }).then((response)=>{
+        setState({...state, country:response.data.country, provience:response.data.provience, 
+          city:response.data.city, phone:response.data.phone, skype:response.data.skype,
+          git:response.data.git
+        }).catch(()=>{
+          alert("something went wrong");
+          setState({...state, edit:false})
+        })
+
+      })
+
+    }}>
+  <Form.Group controlId="country">
+    <Form.Label>Country</Form.Label>
+    <Form.Control type="text" placeholder="Enter your Country" value={state.country} onChange={(e)=>{
+      setState({...state, country:e.target.value});
+    }}/>
+  </Form.Group>
+  <Form.Group controlId="state">
+    <Form.Label>State/Provience</Form.Label>
+    <Form.Control type="text" placeholder="Enter your State/Provience" value={state.provience} onChange={(e)=>{
+      setState({...state, provience:e.target.value});
+    }}/>
+  </Form.Group>
+  <Form.Group controlId="city">
+    <Form.Label>City</Form.Label>
+    <Form.Control type="text" placeholder="Enter your City" value={state.city} onChange={(e)=>{
+      setState({...state, city:e.target.value});
+    }}/>
+  </Form.Group>
+  <Form.Group controlId="phone">
+    <Form.Label>Phone Number</Form.Label>
+    <Form.Control type="number" placeholder="Enter your Phone Number" value={state.phone} onChange={(e)=>{
+      setState({...state, phone:e.target.value});
+    }}/>
+  </Form.Group>
+  <Form.Group controlId="skype">
+    <Form.Label>Skype ID</Form.Label>
+    <Form.Control type="text" placeholder="Enter your Skype ID" value={state.skype} onChange={(e)=>{
+      setState({...state, skype:e.target.value});
+    }}/>
+  </Form.Group>
+  <Form.Group controlId="git">
+    <Form.Label>GitHub</Form.Label>
+    <Form.Control type="text" placeholder="Enter your GitHub Username" value={state.git} onChange={(e)=>{
+      setState({...state, git:e.target.value});
+    }}/>
+  </Form.Group>
+  <Button variant="primary" type="submit">
+    Update Profile
+  </Button>
+</Form>) : 
+
+(<>
+<Button variant="primary" onClick={()=>{
+  setState({...state, edit:true});
+}}>
+    Edit Profile
+  </Button>
+  <br/>
+  <br/>
+
+<ListGroup>
+  <ListGroup.Item disabled> Country : {props.country} </ListGroup.Item>
+  <ListGroup.Item disabled> State/Provience : {props.provience} </ListGroup.Item>
+  <ListGroup.Item disabled> City : {props.city} </ListGroup.Item>
+<ListGroup.Item disabled> Phone : {props.phone} </ListGroup.Item>
+<ListGroup.Item disabled> Skype ID : {props.skype} </ListGroup.Item>
+<ListGroup.Item disabled> GitHub : {props.git} </ListGroup.Item>
+</ListGroup>
+</>
+)
+
+}
+   
+    
 
     </Col>
    

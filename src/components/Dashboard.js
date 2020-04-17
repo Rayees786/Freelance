@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import "../Dashboard.css";
 import adv from "./images/adv.png";
 import 'react-activity-feed/dist/index.css';
@@ -9,22 +9,29 @@ import {
   Form,
   FormControl,
   Button,
-  Row
+  Row,
+  NavDropdown,Col
 } from "react-bootstrap";
 import logo from "./images/freelancerlogo.png";
 import advs from "./images/advs.jpg";
 import icon1 from "./images/icon1.jpg";
-
+import axios from "axios";
 
 import {
-  Link
+  Link, Redirect
 } from "react-router-dom";
 
 function Dashboard(props) {
+
+  const[state,setState]=useState({logout:false});
+
+  console.log(props);
  
 
     return (
 <div>
+
+  {state.logout ? <Redirect to="/"></Redirect> : null}
 
 
 <Navbar collapseOnSelect expand="lg"  fluid>
@@ -51,12 +58,23 @@ function Dashboard(props) {
       <FormControl type="text" placeholder="Search" className="mr-sm-3" />
       <Button variant="primary">Search</Button>
     </Form>    
-      <NavDropdown className="drop" title={props.location.state.username} id="collasible-nav-dropdown">
+      <NavDropdown className="drop" title={props.name} id="collasible-nav-dropdown">
         <NavDropdown.Item href="/profile" > View profile</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">User Settings</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.3">Manage </NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
+        <NavDropdown.Item onClick={()=>{
+          axios.post("http://freelancer.test/api/logout", {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token")
+            }
+          }).then((response)=>{
+            setState({logout:true})
+          }).catch(()=>{
+            alert("something went wrong")
+          });
+
+        }}>Logout</NavDropdown.Item>
       </NavDropdown>
     </Nav>
   </Navbar.Collapse>
@@ -123,8 +141,8 @@ Browse through projects and place another bid
     <Col sm={4}>
 <Container className="container10">
 <p>Welcome back,</p>
-        <h1>{props.location.state.username}</h1>
-<h3>{props.location.state.name}</h3>
+    <h4>{props.name}</h4>
+    <h5>{props.username}</h5>
 </Container>
 
 <br/>

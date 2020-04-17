@@ -17,26 +17,41 @@ import Header from "./Header";
 
 import free from "./images/Free.png";
 
+import axios from "axios";
+
+import Profile from "./Profile";
+
 
 function App(props) {
 
-  const[state,setState]= useState({loggedin:false});
+  const[state,setState]= useState({loggedin:true, name:"", email:"", username:"", id:""});
 
 
   useEffect(()=>{
-
     if (localStorage.getItem("token")) {
-      setState({...state, loggedin: true })
+      axios
+        .get("http://freelancer.test/api/getuser", {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token")
+          }
+        })
+        .then(response => {
+          setState({...state, name:response.data.name,
+            email:response.data.email,
+            username:response.data.username,
+            id:response.data.id
+          })
+         
+        })
+        .catch(() => {
+          setState({...state, loggedin: false });
+        });
+    } else {
+      setState({...state, loggedin: false });
     }
+     
            
         },[]);
-
-// componentDidMount() {
-//   if (localStorage.getItem("token")) {
-//     this.setState({ loggedin: true });
-//   }
-  
-// }
 
     return (
       <div className="width">
@@ -53,6 +68,11 @@ function App(props) {
               <Howitworks></Howitworks>
             </Route>
 
+            <Route path="/profile" exact>
+              <Profile id={state.id}></Profile>
+            </Route>
+
+
             <Route path="/login">
               <Login loginattempt={()=>{
                 setState({...state, loggedin:true})
@@ -65,7 +85,11 @@ function App(props) {
             </Route>
 
             <Route path="/dashboard">
-              <Dashboard login={state.loggedin}></Dashboard>
+              <Dashboard login={state.loggedin}
+              name={state.name}
+              email={state.email}
+              username={state.username}
+              ></Dashboard>
             </Route>
 
             <Route path="/Postaproject" exact>
