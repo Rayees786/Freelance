@@ -1,0 +1,40 @@
+.column1{
+
+    background-color: whitesmoke;
+    height: 300px;
+    
+    
+    }
+    
+    .column2{
+    
+        background-color: whitesmoke;
+        height: 400px;
+        
+        
+        }
+    
+    
+    .container2bid{
+    
+    
+        min-height: 800px;
+        background-color: white;
+    }
+        .containerbid1{
+            height:43%;
+              background-color: whitesmoke;
+              color: black; 
+          
+          }
+    
+          .colsbid{
+    
+    
+            background-color: white;
+            height: 600px;
+          }
+    
+          .budgetbit{
+              float: right;
+          }

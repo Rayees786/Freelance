@@ -27,7 +27,7 @@ function Login(props){
         }
 
         {
-            props.loggedin ? (<Redirect to="/"></Redirect>) : null
+            props.loggedin ? (<Redirect to="/dashboard"></Redirect> ) : null
 
         }
 
@@ -35,7 +35,7 @@ function Login(props){
         <Form className="signupform" onSubmit={(e)=>{
             e.preventDefault();
             setState({...state,error:false})
-            axios.post("http://freelancer.test/api/login",{
+            axios.post("http://FreelancerLaravel.test/api/login",{
             username: state.username,
             password: state.password
          }).then((response)=>{ 

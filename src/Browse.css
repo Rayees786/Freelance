@@ -1,0 +1,57 @@
+.col1{
+
+
+    background-color: white;
+    
+}
+
+.col2{
+
+    background-color: white;
+    overflow: hidden;
+    overflow-y: scroll;
+height: 700px;
+
+}
+.cont1{
+min-height:10%;
+background-color: whitesmoke;
+color: black; 
+overflow-y: scroll;
+overflow: hidden;
+
+}
+.budget{
+
+    float: right;
+    
+}
+body .skills{
+float: left;
+color:blue
+}
+.bidnow{
+
+
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+    background-color: tomato;
+    float: right;
+  }
+
+  .bidnow:hover{
+
+    text-decoration: none;
+    color: white;
+  }
+.cols{
+
+    background-color: white;
+}
+.skillset{
+    color: blue;
+  }

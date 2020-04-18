@@ -20,6 +20,8 @@ import free from "./images/Free.png";
 import axios from "axios";
 
 import Profile from "./Profile";
+import Browseprojects from "./Browseprojects";
+import Bid from "./Bid";
 
 
 function App(props) {
@@ -30,7 +32,7 @@ function App(props) {
   useEffect(()=>{
     if (localStorage.getItem("token")) {
       axios
-        .get("http://freelancer.test/api/getuser", {
+        .get("http://FreelancerLaravel.test/api/getuser", {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token")
           }
@@ -72,12 +74,20 @@ function App(props) {
               <Profile id={state.id}></Profile>
             </Route>
 
+            <Route exact path="/bid" render={(props) => 
+            <Bid {...props} name={state.name}
+            email={state.email}  />} />
+
 
             <Route path="/login">
               <Login loginattempt={()=>{
                 setState({...state, loggedin:true})
               }}
               loggedin={state.loggedin}/>
+            </Route>
+
+            <Route path="/browse">
+              <Browseprojects />
             </Route>
 
             <Route path="/signup">
