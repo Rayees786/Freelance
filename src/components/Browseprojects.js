@@ -56,8 +56,8 @@ return {name:project.name,description:project.description, budget:project.budget
     return (
 
 
-        
-        <div>
+            <div>
+
 <Navbar collapseOnSelect expand="lg"  fluid>
 <Navbar.Brand href="./">
           <img
@@ -71,7 +71,7 @@ return {name:project.name,description:project.description, budget:project.budget
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
-      <Nav.Link href="#features">Dashboard</Nav.Link>
+      <Nav.Link href="/dashboard">Dashboard</Nav.Link>
       <Nav.Link href="#pricing">Inbox</Nav.Link>
 
      
@@ -141,12 +141,15 @@ return {name:project.name,description:project.description, budget:project.budget
          <Container className="col2" sm={8} >
      {state.projects.map((item, index)=>{
 
+
+
+
      return item.type==state.value?( <> <br/><Container className="cont1 " ><h4 className="budget text-muted"> ${item.budget}-{item.budget * 2}</h4><p>{item.name }<hr/></p>
 
-     <p>{ item.description}</p> <p className="bids">Bids:</p> <Link className="bidnow" to={{ pathname:'/bid',state:{desc:item.description,skills:item.skills,budget:item.budget,id:item.id}}}>Bid Now</Link><p className="skills">{item.skills}</p><br/><br/> </Container> <br/></>
+     <p>{ item.description}</p> <p className="bids">Bids:</p> <Link   to={{ pathname:'/bid',state:{desc:item.description,skills:item.skills,budget:item.budget,id:item.id}}}><Button   className="bidnow"disabled={props.role==="Employer"}>Bid Now</Button></Link><p className="skills">{item.skills}</p><br/><br/> </Container> <br/></>
 ):state.value==""? ( <> <br/> <Container className="cont1 " ><h4 className="budget text-muted"> ${item.budget}-{item.budget*2}</h4><p>{item.name }<hr/></p>
 
-<p>{ item.description}</p> <p className="bids">Bids:</p>  <Link  className="bidnow" to={{ pathname:'/bid',state:{desc:item.description,skills:item.skills,budget:item.budget,id:item.id}}}>Bid Now</Link><p className="skills">{item.skills}</p><br/><br/>  </Container></>):null
+<p>{ item.description}</p> <p className="bids">Bids:</p>  <Link   disabled={props.role==="Employer"} to={{ pathname:'/bid',state:{desc:item.description,skills:item.skills,budget:item.budget,id:item.id}}}><Button  className="bidnow" disabled={props.role==="Employer"}>Bid Now</Button></Link><p className="skills">{item.skills}</p><br/><br/>  </Container></>):null
 })}
 
 
@@ -155,6 +158,7 @@ return {name:project.name,description:project.description, budget:project.budget
 </Col>
          </Row> 
          </Container>
+       
         </div>
            );
 }

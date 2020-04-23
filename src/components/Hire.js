@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import {
   Container,
   Row,
@@ -23,8 +23,48 @@ import about8 from "./images/About8.png";
 import about9 from "./images/About9.png";
 
 import { Map, InfoSquare, KanbanFill } from "react-bootstrap-icons";
+import axios from "axios";
 
-function Hire() {
+
+function Hire(props) {
+
+  console.log(props);
+
+
+//   useEffect(()=>{
+//   if (localStorage.getItem("token")){
+
+// axios.all([axios.get('http://FreelancerLaravel.test/api/getuser', {
+//           headers: {
+//             Authorization: "Bearer " + localStorage.getItem("token")
+//           }
+//         }), 
+// axios.get('http://FreelancerLaravel.test/api/postaprojectall', {
+//           headers: {
+//             Authorization: "Bearer " + localStorage.getItem("token")
+//           }
+//         }) ]).then
+
+
+// (axios.spread((user, project)=>{
+
+// console.log(user.data);
+
+// }));
+
+
+
+
+//   }
+
+
+
+// },[])
+
+  
+
+
+
   return (
     <div className="width">
       <h2 className="heading">How can we help?</h2>

@@ -1,10 +1,11 @@
 import React,{useState} from 'react';
 import '../index.css';
 import axios from 'axios';
-import { Card, Form, Button, Alert} from 'react-bootstrap';
+import { Card, Form, Button, Alert,Nav, Navbar,NavLink} from 'react-bootstrap';
 import {
     Redirect
   } from "react-router-dom";
+  import logo from "./images/freelancerlogo.png";
 
 
 function Login(props){
@@ -14,7 +15,40 @@ function Login(props){
   error:false});
 
     return (
-      
+      <>
+       <Navbar collapseOnSelect expand="lg">
+        <Navbar.Brand href="./">
+          <img
+            alt=""
+            src={logo}
+            width="140"
+            height="40"
+            className="d-inline-block align-top"
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <NavLink to="/hire" exact>
+              {" "}
+              How it Works
+            </NavLink>
+            <NavLink to="/browse"> Browse Jobs </NavLink>
+          </Nav>
+
+          <Nav>
+            
+            <NavLink to="/signup" exact>
+              {" "}
+              Sign up{" "}
+            </NavLink>
+            <Button variant="outline-primary" className="button11" href="/Postaproject">
+              {" "}
+              Post a Project{" "}
+            </Button>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
 
         <Card className="Card">
       <Card.Body>
@@ -68,6 +102,7 @@ function Login(props){
       </Card.Body>
 
     </Card>  
+    </>
       )
   }
 

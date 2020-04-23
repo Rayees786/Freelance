@@ -14,9 +14,7 @@ import "../App.css";
 function Howitworks() {
   const [work, setWork] = useState(false);
 
-  useEffect(() => {
-    console.log("Hello");
-  }, []);
+  
 
   return (
     <>

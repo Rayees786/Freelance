@@ -1,11 +1,12 @@
 import React,{useState}from 'react';
 import '../index.css';
 import axios from 'axios';
-import { Card, Form, Button, Col, Row, Alert, FormGroup } from 'react-bootstrap';
+import { Card, Form, Button, Alert, FormGroup,Nav, Navbar,NavLink} from 'react-bootstrap';
 import { Input, Label } from 'reactstrap';
 import {
   Redirect
 } from "react-router-dom";
+import logo from "./images/freelancerlogo.png";
 
 function Signup(){
 
@@ -15,11 +16,46 @@ function Signup(){
   username: "",
   password: "",
   cpassword: "",
-  role: "Freelancer",
+  role: "",
   error: false,
   signup: false,});
 
     return (
+      <>
+     
+<Navbar collapseOnSelect expand="lg">
+        <Navbar.Brand href="./">
+          <img
+            alt=""
+            src={logo}
+            width="140"
+            height="40"
+            className="d-inline-block align-top"
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <NavLink to="/hire" exact>
+              {" "}
+              How it Works
+            </NavLink>
+            <NavLink to="/browse"> Browse Jobs </NavLink>
+            <NavLink to="/login"> Log in </NavLink>
+           
+          </Nav>
+
+          <Nav>
+           
+
+          
+            <Button variant="outline-primary" className="button11">
+              {" "}
+              Post a Project{" "}
+            </Button>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
 
       <Card className="Card">
         <Card.Body>
@@ -103,6 +139,7 @@ function Signup(){
           </Form>
         </Card.Body>
       </Card >
+      </>
     )
   }
 

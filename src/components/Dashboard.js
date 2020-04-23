@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import "../Dashboard.css";
 import adv from "./images/adv.png";
 import 'react-activity-feed/dist/index.css';
@@ -23,15 +23,70 @@ import {
 
 function Dashboard(props) {
 
-  const[state,setState]=useState({logout:false});
+  const[state,setState]=useState({logout:false, projects:[], userId:"", info:false});
 
-  console.log(props);
+  console.log(state);
+  
+  if(state.userId!=""){
+    showinfo();
+  }
+
+  useEffect(()=>{
+
+    if (localStorage.getItem("token")) {
+      axios
+        .get("http://FreelancerLaravel.test/api/biddedprojects", {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token")
+          }
+        })
+        .then((response)=>{
+          setState({...state, projects: response.data.map((project) => {
+            return {amount:project.amount,proposal:project.proposal, user:project.user_id}
+          })
+        });
+
+
+        }).catch(()=>{
+          alert("nmsc");
+
+        })
+      }
+      else{
+        return alert("something went wrong");
+      }
+    
+
+  },[])
+
+  function showinfo(){
+    axios
+        .get("http://FreelancerLaravel.test/api/getuserinfo/"+state.userId,
+         {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token")
+          }
+
+        })
+        .then((response)=>{
+          
+          console.log(response);
+
+        }).catch(()=>{
+          alert("Projects couldn't be loaded");
+
+        })
+    } 
+  
  
 
     return (
 <div>
 
   {state.logout ? <Redirect to="/"></Redirect> : null}
+
+
+
 
 
 <Navbar collapseOnSelect expand="lg"  fluid>
@@ -47,7 +102,7 @@ function Dashboard(props) {
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
-      <Nav.Link href="#features">Dashboard</Nav.Link>
+      <Nav.Link href="#">Dashboard</Nav.Link>
       <Nav.Link href="/browse">Browse Projects</Nav.Link>
       <Nav.Link href="#pricing">Inbox</Nav.Link>
 
@@ -88,8 +143,34 @@ function Dashboard(props) {
     <Navbar className="navbar1"  >
     <Navbar.Brand   href="#home">Recent projects</Navbar.Brand>
     <a  href="#home">View all</a>
+
+
   </Navbar>
   <hr/>
+  { props.role=='Employer'? (state.projects.map((item, index)=>{
+
+
+  return (<>
+  
+  <Container className="cont12">
+<Link onClick={()=>{
+  
+  setState({...state, userId:item.user, info:true})
+  
+
+}}> <h5>
+{item.proposal}</h5> </Link>  
+  <Container className="btns">
+  <Button  >Accept bid</Button>
+  </Container>
+  {item.amount} 
+  </Container>
+  
+  </>)
+
+
+
+})):(
 
 <Container className="container15">
 <img   className="img1" 
@@ -98,11 +179,13 @@ function Dashboard(props) {
             className="d-inline-block align-top"
           /><br/><br/>
   <p>Start bidding now on projects that meet your skills.</p><br/>
+
+ 
   <Button variant="primary"className="btn-3" >
               {" "}
               Browse Project{" "}
             </Button>
-            </Container>
+            </Container>)}
   </Container>
 
 <br/><br/>
@@ -172,6 +255,8 @@ Browse through projects and place another bid
 </Container>
           </div>
     );
+
+
   
       
 }

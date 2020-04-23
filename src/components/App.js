@@ -26,7 +26,7 @@ import Bid from "./Bid";
 
 function App(props) {
 
-  const[state,setState]= useState({loggedin:true, name:"", email:"", username:"", id:""});
+  const[state,setState]= useState({loggedin:true, name:"", email:"", username:"", bidNo:"",role:"",skills:""});
 
 
   useEffect(()=>{
@@ -38,12 +38,15 @@ function App(props) {
           }
         })
         .then(response => {
+          
           setState({...state, name:response.data.name,
             email:response.data.email,
             username:response.data.username,
-            id:response.data.id
+            bidNo:response.data.bidNo,
+            role:response.data.role
           })
          
+          
         })
         .catch(() => {
           setState({...state, loggedin: false });
@@ -51,9 +54,73 @@ function App(props) {
     } else {
       setState({...state, loggedin: false });
     }
-     
+    
            
         },[]);
+
+
+// let one="http://FreelancerLaravel.test/api/getuser";
+// // let two="http://FreelancerLaravel.test/api/postabid";
+
+// const requestOne = axios.get(one);
+// // const requestTwo = axios.get(two);
+
+// useEffect(()=>{
+//   if (localStorage.getItem("token")) {
+//     axios.all([requestOne]).then(
+//       axios.spread((...responses)=>{
+//         const responseOne = responses[0];
+//         // const responseTwo = responses[1];
+
+//         console.log(responseOne);
+
+//       })
+
+//     ).catch((errors)=>{
+//       console.log(errors);
+
+//     });
+
+//   }
+//   else {
+//         setState({...state, loggedin: false });
+//       }
+
+// },[]);
+
+// useEffect(()=>{
+//   if (localStorage.getItem("token")){
+
+// axios.all([axios.get('http://FreelancerLaravel.test/api/postaprojectall', {
+//           headers: {
+//             Authorization: "Bearer " + localStorage.getItem("token")
+//           }
+//         }), 
+// axios.get('http://FreelancerLaravel.test/api/getuser', {
+//           headers: {
+//             Authorization: "Bearer " + localStorage.getItem("token")
+//           }
+//         }) ]).then
+
+
+// (axios.spread((project, user)=>{
+
+// setState({...state, name:project.data.name})
+
+
+// console.log(project,user);
+// }));
+
+
+
+
+//   }
+
+
+
+// },[])
+
+
 
     return (
       <div className="width">
@@ -76,7 +143,9 @@ function App(props) {
 
             <Route exact path="/bid" render={(props) => 
             <Bid {...props} name={state.name}
-            email={state.email}  />} />
+            email={state.email} bidNo={state.bidNo} updateBidCount={()=>{
+              setState({...state,bidNo:state.bidNo});
+            }}/>} />
 
 
             <Route path="/login">
@@ -87,20 +156,31 @@ function App(props) {
             </Route>
 
             <Route path="/browse">
-              <Browseprojects />
+              <Browseprojects role={state.role} />
             </Route>
+
+
 
             <Route path="/signup">
               <Signup />
             </Route>
 
-            <Route path="/dashboard">
+            <Route exact path="/dashboard" render={(props) => 
+            <Dashboard {...props}  login={state.loggedin}
+            name={state.name}
+            email={state.email}
+            username={state.username}
+            role={state.role} skills={state.skills} />} />
+            
+
+            {/* <Route path="/dashboard">
               <Dashboard login={state.loggedin}
               name={state.name}
               email={state.email}
               username={state.username}
+              role={state.role} skills={state.skills}
               ></Dashboard>
-            </Route>
+            </Route> */}
 
             <Route path="/Postaproject" exact>
               <Postaproject login={state.loggedin}/>

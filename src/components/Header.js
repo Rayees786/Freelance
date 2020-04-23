@@ -13,7 +13,7 @@ import {
 } from "react-router-dom";
 
 function Header(props) {
-  if (props.location.pathname != "/login"&&props.location.pathname != "/dashboard") {
+  if (props.location.pathname != "/login" && props.location.pathname != "/dashboard" && props.location.pathname != "/browse" && props.location.pathname != "/signup"  && props.location.pathname != "/bid" && props.location.pathname != "/profile") {
     return (
       <Navbar collapseOnSelect expand="lg">
         <Navbar.Brand href="./">
@@ -32,7 +32,7 @@ function Header(props) {
               {" "}
               How it Works
             </NavLink>
-            <NavLink to="#"> Browse Jobs </NavLink>
+            <NavLink to="/browse"> Browse Jobs </NavLink>
           </Nav>
 
           <Nav>

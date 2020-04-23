@@ -16,10 +16,9 @@ import {
 
 function Bid(props) {
 
-    const[state,setState]=useState({projectId:props.location.state.id, amount:"", proposal:""});
 
-    console.log(props);
-      
+    const[state,setState]=useState({projectId:props.location.state.id, amount:"", proposal:"" ,bidNo:props.bidNo});
+console.log(props.bidNo)
 
     return (
         <div>
@@ -36,7 +35,7 @@ function Bid(props) {
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
-      <Nav.Link href="#features">Dashboard</Nav.Link>
+      <Nav.Link href="#">Dashboard</Nav.Link>
       <Nav.Link href="#pricing">Inbox</Nav.Link>
 
      
@@ -67,6 +66,7 @@ function Bid(props) {
 </Container><br/>
 <Container className="container12"><br/>
 <h4>Bids left</h4><hr/>
+    <p>{props.bidNo}/8</p>
 <p className="skillset">
 
     </p><br/>
@@ -97,10 +97,13 @@ function Bid(props) {
      <h4>Place a bid on this project<hr/></h4>
 <Form onSubmit={(e)=>{
     e.preventDefault();
+
+    props.updateBidCount();
     axios.post('http://FreelancerLaravel.test/api/postbid',{
         project_id: state.projectId,
         amount: state.amount,
-        proposal:state.proposal
+        proposal:state.proposal,
+       
        },
         {
            headers: {
@@ -109,7 +112,9 @@ function Bid(props) {
          }
     ).then(()=>{
         alert("Your bid has been posted");
-        setState({amount:""});
+        setState({...state,amount:"",proposal:"",bidNo:"bidNo"
+      });
+
     }).catch(()=>{
         alert("Something went wrong");
     });

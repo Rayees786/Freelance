@@ -52,7 +52,8 @@ function Profile(props) {
               {" "}
               How it Works
             </NavLink>
-            <NavLink to="#"> Browse Jobs </NavLink>
+            <NavLink to="/browse"> Browse Jobs </NavLink>
+            <NavLink to="/dashboard"> Dashboard </NavLink>
            
           </Nav>
 
