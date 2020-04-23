@@ -119,7 +119,7 @@ function Dashboard(props) {
         <NavDropdown.Item href="#action/3.3">Manage </NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item onClick={()=>{
-          axios.post("http://freelancer.test/api/logout", {
+          axios.post("http://FreelancerLaravel.test/api/logout", {
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token")
             }

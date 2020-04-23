@@ -98,8 +98,10 @@ console.log(props.bidNo)
 <Form onSubmit={(e)=>{
     e.preventDefault();
 
+
     props.updateBidCount();
     axios.post('http://FreelancerLaravel.test/api/postbid',{
+
         project_id: state.projectId,
         amount: state.amount,
         proposal:state.proposal,

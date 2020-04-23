@@ -26,7 +26,10 @@ import Bid from "./Bid";
 
 function App(props) {
 
+
   const[state,setState]= useState({loggedin:true, name:"", email:"", username:"", bidNo:"",role:"",skills:""});
+
+
 
 
   useEffect(()=>{
@@ -138,7 +141,7 @@ function App(props) {
             </Route>
 
             <Route path="/profile" exact>
-              <Profile id={state.id}></Profile>
+              <Profile></Profile>
             </Route>
 
             <Route exact path="/bid" render={(props) => 
