@@ -43,7 +43,7 @@ console.log(props.login);
 <Card.Body>
 <Form className="form" onSubmit={(e)=>{
     e.preventDefault();
-    axios.post('http://FreelancerLaravel.test/api/postaproject',{
+    axios.post('http://freelancer.test/api/postaproject',{
         name: state.name,
         description: state.description,
         skills: state.skills,

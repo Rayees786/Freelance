@@ -26,7 +26,7 @@ function Browseprojects(props) {
     useEffect(()=>{
            if (localStorage.getItem("token")) {
             axios
-              .get("http://FreelancerLaravel.test/api/postaprojectall", {
+              .get("http://freelancer.test/api/postaprojectall", {
                 headers: {
                   Authorization: "Bearer " + localStorage.getItem("token")
                 }

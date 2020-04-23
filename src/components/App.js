@@ -26,13 +26,13 @@ import Bid from "./Bid";
 
 function App(props) {
 
-  const[state,setState]= useState({loggedin:true, name:"", email:"", username:"", id:""});
+  const[state,setState]= useState({loggedin:true, name:"", email:"", username:""});
 
 
   useEffect(()=>{
     if (localStorage.getItem("token")) {
       axios
-        .get("http://FreelancerLaravel.test/api/getuser", {
+        .get("http://freelancer.test/api/getuser", {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token")
           }
@@ -71,7 +71,7 @@ function App(props) {
             </Route>
 
             <Route path="/profile" exact>
-              <Profile id={state.id}></Profile>
+              <Profile></Profile>
             </Route>
 
             <Route exact path="/bid" render={(props) => 

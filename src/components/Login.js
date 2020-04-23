@@ -35,7 +35,7 @@ function Login(props){
         <Form className="signupform" onSubmit={(e)=>{
             e.preventDefault();
             setState({...state,error:false})
-            axios.post("http://FreelancerLaravel.test/api/login",{
+            axios.post("http://freelancer.test/api/login",{
             username: state.username,
             password: state.password
          }).then((response)=>{ 

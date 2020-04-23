@@ -97,7 +97,7 @@ function Bid(props) {
      <h4>Place a bid on this project<hr/></h4>
 <Form onSubmit={(e)=>{
     e.preventDefault();
-    axios.post('http://FreelancerLaravel.test/api/postbid',{
+    axios.post('http://freelancer.test/api/postbid',{
         project_id: state.projectId,
         amount: state.amount,
         proposal:state.proposal

@@ -24,14 +24,40 @@ import {
 
 import axios from "axios";
 
-function Profile(props) {
+function Profile() {
 
   
 
-  const[state,setState]=useState({edit:false, country:"", provience:"", city:"", phone:"", skype:"", git:"", id:props.id});
+  const[state,setState]=useState({edit:false, country:"", provience:"", city:"", phone:"", skype:"", git:""});
 
   
   console.log(state);
+
+  useEffect(()=>{
+    if (localStorage.getItem("token")) {
+      axios
+        .get("http://freelancer.test/api/getprofile", {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token")
+          }
+        }).then((response)=>{
+          setState({country:response.data.country, provience:response.data.provience, 
+            city:response.data.city, phone:response.data.phone, skype:response.data.skype,
+            git:response.data.git})
+
+        }).catch(()=>{
+          alert("Your profile couldn't be loaded")
+
+        });
+      }
+      else{
+        return alert("hello");
+
+
+      }
+
+  },[]);
+
     return (
 <div>
 
@@ -74,11 +100,11 @@ function Profile(props) {
     <img alt="" width="98%"  height="35%" src={adv} /><br/><br/>
     <Container className="container1">
       <br/>
-     <Window></Window>  {props.country}<br/><br/>
-     <Window></Window>  {props.city},{props.provience}<br/><br/>
-     <Window></Window>  {props.phone}<br/><br/>
-     <Window></Window>  {props.skype}<br/><br/>
-     <Window></Window>  {props.id}<br/><br/>
+     <Window></Window> {state.country} <br/><br/>
+     <Window></Window>  {state.city},{state.provience} <br/><br/>
+     <Window></Window>  {state.phone} <br/><br/>
+     <Window></Window> {state.skype} <br/><br/>
+     <Window></Window> {state.git} <br/><br/>
      </Container>
     </Col>
     <Col  className="cols1" lg="6">  <br/><h2>  Your Profile </h2><br/>
@@ -92,16 +118,17 @@ function Profile(props) {
         phone: state.phone,
         skype: state.skype,
         git: state.git
+      },{
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token")
+        }
       }).then((response)=>{
-        setState({...state, country:response.data.country, provience:response.data.provience, 
-          city:response.data.city, phone:response.data.phone, skype:response.data.skype,
-          git:response.data.git
+        alert("profile updated successfully");
+        setState({...state, edit:false})
         }).catch(()=>{
           alert("something went wrong");
           setState({...state, edit:false})
         })
-
-      })
 
     }}>
   <Form.Group controlId="country">
@@ -155,12 +182,12 @@ function Profile(props) {
   <br/>
 
 <ListGroup>
-  <ListGroup.Item disabled> Country : {props.country} </ListGroup.Item>
-  <ListGroup.Item disabled> State/Provience : {props.provience} </ListGroup.Item>
-  <ListGroup.Item disabled> City : {props.city} </ListGroup.Item>
-<ListGroup.Item disabled> Phone : {props.phone} </ListGroup.Item>
-<ListGroup.Item disabled> Skype ID : {props.skype} </ListGroup.Item>
-<ListGroup.Item disabled> GitHub : {props.git} </ListGroup.Item>
+  <ListGroup.Item disabled> Country : {state.country} </ListGroup.Item>
+  <ListGroup.Item disabled> State/Provience : {state.provience} </ListGroup.Item>
+<ListGroup.Item disabled> City : {state.city} </ListGroup.Item>
+<ListGroup.Item disabled> Phone : {state.phone} </ListGroup.Item>
+<ListGroup.Item disabled> Skype ID : {state.skype} </ListGroup.Item>
+<ListGroup.Item disabled> GitHub : {state.git} </ListGroup.Item>
 </ListGroup>
 </>
 )

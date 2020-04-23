@@ -35,7 +35,7 @@ function Signup(){
           <Form className="signupform" onSubmit={(e) => {
             e.preventDefault();
             setState({ ...state, error: false });
-            axios.post("http://FreelancerLaravel.test/api/signup", {
+            axios.post("http://freelancer.test/api/signup", {
               name: state.name,
               email: state.email,
               username: state.username,
